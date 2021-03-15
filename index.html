@@ -14,35 +14,71 @@
 		<div>
 			<h2>CHOOSE YOUR FIGHTER</h2>
 			<img src="gu.png" onclick="mainLoop(1);">
-			<img src="choki.png" onclick="mainLoop(2)">
-			<img src="pa.png"  onclick="mainLoop(3)">
+			<img src="pa.png"  onclick="mainLoop(2)">
+			<img src="choki.png" onclick="mainLoop(3)">
+			
       		<div>
 
 		<div>
-			<h2>Your opponent</h2>
-			<div id="pcimage"></div>
+			<div id="player">
+				<h2>You</h2>
+			</div>
+			<div id="pc">
+				<h2>Your opponent</h2>
+			</div>
 		</div>
 
 	<script>
            	var pcThrow;
+		
 		var gu = document.createElement("img");
-		gu.src = "gu.png";
+			gu.setAttribute("id", "newImg");
+			gu.src = "gu.png";
 		var choki =document.createElement("img");
-		choki.src = "choki.png";
+			choki.setAttribute("id", "newImg");
+			choki.src = "choki.png";
 		var pa = document.createElement("img");
-		pa.src = "pa.png";
+			pa.setAttribute("id", "newImg");
+			pa.src = "pa.png";
         	
 		function mainLoop(userThrow) {
+
+p = document.getElementById("player");
+pcImg = document.getElementById("pc");
+
+			try{
+	elem = document.getElementById("newImg");
+	elem.remove();
+			} catch(error){
+			console.error(error);
+			}
 			pcThrow = Math.floor(Math.random() * 3+1);
-			pcImage = document.getElementById("pcimage");
-			if (pcThrow == 1){
-				pcImage.appendChild(gu);
+
+
+
+			if (pcThrow == 1){				
+				pcImg.appendChild(gu);
+				
 			}
 			if (pcThrow == 2){
-				pcImage.appendChild(choki);
+				pcImg.appendChild(pa);
+				
 			}
 			if (pcThrow == 3){
-				pcImage.appendChild(pa);
+				pcImg.appendChild(choki);
+				
+			}
+			if (userThrow == 1){				
+				p.appendChild(gu);
+				
+			}
+			if (userThrow == 2){
+				p.appendChild(pa);
+				
+			}
+			if (userThrow == 3){
+				p.appendChild(choki);
+				
 			}
             		checkThrow(userThrow, pcThrow);
         	}

@@ -15,7 +15,11 @@
       var score;
       var userThrow;
       var pcThrow;
-   
+      
+      function startGame(){
+       gameArea.start(); 
+      }
+      
       var gameArea = {
         canvas : document.createElement("canvas"),
         start : function(){

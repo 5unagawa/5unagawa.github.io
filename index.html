@@ -1,17 +1,67 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <title>5unagawa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>
-      canvas {
-        border:1px solid #d3d3d3;
-        background-color: #f1f1f1;
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="gameArea" width="480" height="270"></canvas>
+	<head>
+		<title>Jyanken</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+      			img {
+        			width: 50px;
+        			height: 50px;
+			}
+    		</style>
+	</head>
+	<body>
+		<div>
+			<h2>CHOOSE YOUR FIGHTER</h2>
+			<img src="gu.png" onclick="mainLoop(1);">
+			<img src="choki.png" onclick="mainLoop(2)">
+			<img src="pa.png"  onclick="mainLoop(3)">
+      		<div>
+
+		<div>
+			<h2>Your opponent</h2>
+			<div id="pcimage"></div>
+		</div>
+
+	<script>
+           	var pcThrow;
+		var gu = document.createElement("img");
+		gu.src = "gu.png";
+		var choki =document.createElement("img");
+		choki.src = "choki.png";
+		var pa = document.createElement("img");
+		pa.src = "pa.png";
+        	
+		function mainLoop(userThrow) {
+			pcThrow = Math.floor(Math.random() * 3+1);
+			pcImage = document.getElementById("pcimage");
+			if (pcThrow == 1){
+				pcImage.appendChild(gu);
+			}
+			if (pcThrow == 2){
+				pcImage.appendChild(choki);
+			}
+			if (pcThrow == 3){
+				pcImage.appendChild(pa);
+			}
+            		checkThrow(userThrow, pcThrow);
+        	}
+//1 is rock
+//2 is paper
+//3 is scissors
+		function checkThrow(user, pc) {
+//check for draws
+            		if (user == pc) {
+                		console.log("It's a draw!");
+            		}
+            		else if ((user==1 && pc==3)||(user==2 && pc==1)||(user==3 && pc==2)) {
+                		console.log("You win!");
+            		}
+            		else {
+                		console.log("You lose.");
+            		}
+        	}
+    </script>	
 </body>
 
 </html>

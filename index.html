@@ -10,25 +10,8 @@
       }
     </style>
   </head>
-  <body onload="startGame()">
-    <script>
-      var score;
-      var userThrow;
-      var pcThrow;
-      
-      function startGame(){
-       gameArea.start(); 
-      }
-      
-      var gameArea = {
-        canvas : document.createElement("canvas"),
-        start : function(){
-          this.canvas.width = 480;
-          this.canvas.height = 270;
-        }
-      }
-
-    </script>
+  <body>
+    <canvas id="gameArea" width="480" height="270"></canvas>
 </body>
 
 </html>

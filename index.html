@@ -10,8 +10,21 @@
       }
     </style>
   </head>
-  <body>
-    Henlo world.
+  <body onload="startGame()">
+    <script>
+      var score;
+      var userThrow;
+      var pcThrow;
+   
+      var gameArea = {
+        canvas : document.createElement("canvas"),
+        start : function(){
+          this.canvas.width = 480;
+          this.canvas.height = 270;
+        }
+      }
+
+    </script>
 </body>
 
 </html>

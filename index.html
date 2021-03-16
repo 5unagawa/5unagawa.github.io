@@ -4,100 +4,90 @@
 		<title>Jyanken</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<style>
-      			img {
-        			width: 50px;
-        			height: 50px;
+			img {
+				width: 50px;
+        		height: 50px;
 			}
-    		</style>
+    	</style>
 	</head>
 	<body>
 		<div>
 			<h2>CHOOSE YOUR FIGHTER</h2>
 			<img src="gu.png" onclick="mainLoop(1);">
-			<img src="pa.png"  onclick="mainLoop(2)">
-			<img src="choki.png" onclick="mainLoop(3)">
-			
-      		<div>
-
+			<img src="choki.png" onclick="mainLoop(2)">
+			<img src="pa.png"  onclick="mainLoop(3)">
+		</div>
 		<div>
 			<div id="player">
 				<h2>You</h2>
 			</div>
-			<div id="pc">
+			<div id="computerPlayer">
 				<h2>Your opponent</h2>
 			</div>
+		<h2 id="result"></h2>
 		</div>
 
-	<script>
-           	var pcThrow;
-		
-		var gu = document.createElement("img");
-			gu.setAttribute("id", "newImg");
-			gu.src = "gu.png";
-		var choki =document.createElement("img");
-			choki.setAttribute("id", "newImg");
-			choki.src = "choki.png";
-		var pa = document.createElement("img");
-			pa.setAttribute("id", "newImg");
-			pa.src = "pa.png";
+<script>
+	var pcThrow;
+	var gu = document.createElement("img");
+		gu.setAttribute("class", "newImg");
+		gu.src = "gu.png";
+	
+	var choki = document.createElement("img");
+		choki.setAttribute("class", "newImg");
+		choki.src = "choki.png";
+	
+	var pa = document.createElement("img");
+		pa.setAttribute("class", "newImg");
+		pa.src = "pa.png";
         	
-		function mainLoop(userThrow) {
-
-p = document.getElementById("player");
-pcImg = document.getElementById("pc");
-
-			try{
-	elem = document.getElementById("newImg");
-	elem.remove();
-			} catch(error){
+	function chooseImage(outputDiv, throwValue) {
+		if (throwValue == 1) {
+			let clone = gu.cloneNode();
+			outputDiv.appendChild(clone);
+		}
+		if (throwValue == 2) {
+			let clone = choki.cloneNode();
+			outputDiv.appendChild(clone);
+		}
+		if (throwValue == 3) {
+			let clone = pa.cloneNode();
+			outputDiv.appendChild(clone);
+		}
+	}
+	
+	function mainLoop(playerThrow) {
+		player = document.getElementById("player");
+		cp = document.getElementById("computerPlayer");
+		cpThrow = Math.floor(Math.random() * 3+1);
+		
+		try{
+			var throwPics = document.getElementsByClassName("newImg");
+			while (throwPics.length > 0){
+				throwPics[0].remove();
+			}
+		} catch(error){
 			console.error(error);
-			}
-			pcThrow = Math.floor(Math.random() * 3+1);
+		}
+		
+		chooseImage(player, playerThrow);
+		chooseImage(cp, cpThrow);
+		checkThrow(playerThrow, cpThrow);
+	}
 
-
-
-			if (pcThrow == 1){				
-				pcImg.appendChild(gu);
-				
-			}
-			if (pcThrow == 2){
-				pcImg.appendChild(pa);
-				
-			}
-			if (pcThrow == 3){
-				pcImg.appendChild(choki);
-				
-			}
-			if (userThrow == 1){				
-				p.appendChild(gu);
-				
-			}
-			if (userThrow == 2){
-				p.appendChild(pa);
-				
-			}
-			if (userThrow == 3){
-				p.appendChild(choki);
-				
-			}
-            		checkThrow(userThrow, pcThrow);
-        	}
-//1 is rock
-//2 is paper
-//3 is scissors
-		function checkThrow(user, pc) {
-//check for draws
-            		if (user == pc) {
-                		console.log("It's a draw!");
-            		}
-            		else if ((user==1 && pc==3)||(user==2 && pc==1)||(user==3 && pc==2)) {
-                		console.log("You win!");
-            		}
-            		else {
-                		console.log("You lose.");
-            		}
-        	}
-    </script>	
-</body>
-
+	function checkThrow(playerThrow, cpThrow) {
+	//1 = rock , 2 = scissors , 3 = paper
+		result = document.getElementById("result");
+		if (playerThrow == cpThrow) {
+			result.innerHTML = "It's a tie!";
+		}
+		else if ((playerThrow==1 && cpThrow==2)||(playerThrow==2 && cpThrow==3)||(playerThrow==3 && cpThrow==1)) {
+			result.innerHTML = "You win!";
+		}
+        else {
+			result.innerHTML = "You lose.";
+        }
+    }
+</script>	
+	</body>
 </html>

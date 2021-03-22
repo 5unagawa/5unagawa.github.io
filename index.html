@@ -62,73 +62,24 @@
     	document.addEventListener("mousemove", mouseMoveHandler, false);
     	document.addEventListener("keydown", keyDownHandler, false);
     	document.addEventListener("keyup", keyUpHandler, false);
-    	document.addEventListener("touchstart", handleStart, false);
-    	document.addEventListener("touchend", handleEnd, false);
-    	document.addEventListener("touchcancel", handleCancel, false);
-    	document.addEventListener("touchmove", handleMove, false);
-
-		var ongoingTouches=[];
-		function handleStart(e) {
-			e.preventDefault();
-			var touches = e.changedTouches;
-			
-			for (var i = 0; i < touches.length; i++){
-				ongoingTouches.push(copyTouch(touches[i]));
-				var color = colorForTouch(touches[i]);
-				ctx.beginPath();
-				ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2*Math.PI, false);
-				ctx.fillStyle = color;
-			} 
-		}
-
-		function handleMove(e) {
-			var relativeX = e.clientX - canvas.offsetLeft;
-			if (relativeX > 0 && relativeX < canvas.width) {
-	    			paddleX = relativeX - paddleWidth/2;
-			}
-		}
 		
-		function handleEnd(e) {
-			e.preventDefault();
-			var touches = e.changedTouches;
-			
-			for (var i = 0; i < touches.length; i++) {
-				var color = colorForTouch(touches[i]);
-				var idx = ongoingTouchIndexById(touches[i].identifier);
-				
-				if (idx >= 0) {
-					ctx.lineWidth = 4;
-					ctx.fillStyle = color;
-					ctx.beginPath();
-					ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
-					ctx.lineTo(touches[i].pageX, touches[i].pageY);
-					ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);
-					ongoingTouches.splice(idx, 1);
-				}
-			}
+    	document.addEventListener("touchstart", function(e) {
+	    e.preventDefault();
+	}, false);
+    	
+	document.addEventListener("touchend", function(e) {
+	    e.preventDefault();
+	}, false);
+    	
+	document.addEventListener("touchmove", function(e) {
+	    e.preventDefault();
+	    var touchObj = e.changedTouches[0];
+	    var relativeX = e.clientX - canvas.offsetLeft;
+	        if (relativeX > 0 && relativeX < canvas.width) {
+	    	    paddleX = relativeX - paddleWidth/2;
 		}
-		
-		function handleCancel(e) {
-			e.preventDefault();
-			var touches = e.changedTouches;
-			
-			for (var i = 0; i < touches.length; i++) {
-				var id = ongoingTouchIndexById(touches[i].identifier);
-				ongoingTouches.splice(idx, 1);
-			}
-		}
-
-		function colorForTouch(touch) {
-			var r = touch.identifier % 16;
-			var g = Math.floor(touch.identifier / 3) % 16;
-			var b = Math.floor(touch.identifier / 7) % 16;
-			r =r.toString(16);
-			g =g.toString(16);
-			b =b.toString(16);
-			var color = "#" + r + g + b;
-			return color;			
-		}
-		
+	}, false);
+    		
     	function mouseMoveHandler(e) {
 			var relativeX = e.clientX - canvas.offsetLeft;
 			if (relativeX > 0 && relativeX < canvas.width) {

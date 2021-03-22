@@ -82,23 +82,10 @@
 		}
 
 		function handleMove(e) {
-			e.preventDefault();
-			var touches = e.changedTouches;
-			
-			for (var i = 0; i < touches.length; i++) {
-				var color = colorForTouch(touches[i]);
-				var idx = ongoingTouchIndexById(touches[i].identifier);
-				
-				if (idx >= 0) {
-					ctx.beginPath();
-					ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
-					ctx.lineTo(touches[i].pageX, touches[i].pageY);
-					ctx.lineWidth = 4;
-					ctx.strokeStyle = color;
-					ctx.stroke();
-					
-					ongoingTouches.splice(idx, 1, copyTouch(touches[i]));				}
-			} 
+			var relativeX = e.clientX - canvas.offsetLeft;
+			if (relativeX > 0 && relativeX < canvas.width) {
+	    			paddleX = relativeX - paddleWidth/2;
+			}
 		}
 		
 		function handleEnd(e) {

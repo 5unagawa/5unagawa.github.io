@@ -1,0 +1,17 @@
+img {
+				width: 50px;
+        		height: 50px;
+}
+div {
+	background: blue;
+	display: inline-block;
+}
+#game-board {
+	width: 360px;
+	border: 1px solid #131313;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	grid-auto-flow: column;
+	gap: 8px;
+}

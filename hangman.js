@@ -18,6 +18,7 @@ keys.addEventListener('click', (event) => {
 	
 	//else
 	checkLetter(target.value);
+	target.style.visibility = "hidden";
 	document.getElementById("word").innerHTML = blankWord.join(' ');
 	console.log(blankWord);
 	
@@ -25,6 +26,7 @@ keys.addEventListener('click', (event) => {
 
 function startGame(){ //get user input and prepare game board
 	document.getElementById("word").innerHTML = "";
+	document.querySelectorAll('.btn-group button').forEach(elem=> {elem.style.visibility = "visible";});
 	let input = prompt("Please enter your word:", "...");
 	
 	if (input.match(letters)){ //add check for symbols and numbers
@@ -38,7 +40,7 @@ function startGame(){ //get user input and prepare game board
 		console.log(blankWord);
 		chances = 10;
 		document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = false;});
-		document.getElementById("start-btn").style.display="none";
+		document.getElementById("start-btn").style.visibility="hidden";
 	} else {
 		window.alert("Please enter your word again.");
 	}
@@ -57,10 +59,12 @@ function checkLetter(input){
 	
 	if (foundFlag == 0) {
 		--chances;
+		document.getElementById("chance").innerHTML = "Chances: " + chances;
 		if (chances == 0) {
 			window.alert("Out of chances. Game Over. The word was: " + targetWord);
 			document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
-			document.getElementById("start-btn").style.display="block";
+			document.getElementById("start-btn").style.visibility="visible";
+			
 		}
 	}
 	
@@ -68,43 +72,6 @@ function checkLetter(input){
 		document.getElementById("word").innerHTML = blankWord.join(' ');
 		window.alert("Congratulations! You win!");
 		document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
-		document.getElementById("start-btn").style.display="block";
+		document.getElementById("start-btn").style.visibility="visible";
 	}
 }
-
-//GUI
-var score = 0;
-var chanceCount = 10;
-
-
-function drawBlank() {
-	ctx.beginPath();
-	ctx.rect (count , 10, 20, 10);
-	ctx.fillStyle = "black";
-	ctx.closePath();
-}
-
-function drawBlocks() {
-	for (let i=0; i < alphabet.length; i++) {
-		if (blocks[i].status == 0) {
-			var bX = (i*(blockWidth + blockPadding)) + blockOffsetLeft;
-			var bY = blockWidth + blockPadding + blockOffsetTop;
-		   	blocks[i].x = bX;
-		    ctx.beginPath();
-		    ctx.rect(bX + blockX, bY + blockY, blockWidth, blockHeight);
-		    ctx.fillStyle = "green";
-		    ctx.closePath();
-		    ctx.fill();
-			ctx.fillStyle = "black";
-			ctx.font = "20px serif";
-			ctx.fillText((answerArray[blocks[i].answer]), bX+20, bY+25);
-			
-		}
- 	}
-}
-
-function drawChance(){
-  ctx.font ="16px Arial";
-	ctx.fillStyle = "White";
-	ctx.fillText("Guesses Left: " + chanceCount, 8, 20);
-} 

@@ -40,7 +40,7 @@ function startGame(){ //get user input and prepare game board
 		document.getElementById("word").innerHTML = blankWord.join(' ');
 		console.log(blankWord);
 		chances = 10;
-		document.getElementById("chance").innerHTML = "Chances: " + chances;
+		document.getElementById("chance").innerHTML = "Dan is a big nerd: " + chances;
 document.getElementById("chanceImg").src=("images/number_" + chances + ".png");
 		document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = false;});
 		document.getElementById("start-btn").style.visibility="hidden";

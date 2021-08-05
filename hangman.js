@@ -3,8 +3,9 @@ var blankWord;
 var chances;
 var letters = /^[A-Za-z]+$/;
 
-//disable input buttons
+//disable input buttons, re-enable start button
 document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
+
 const keys = document.querySelector('.btn-group');
 keys.addEventListener('click', (event) => {
 	//access clicked element
@@ -39,6 +40,7 @@ function startGame(){ //get user input and prepare game board
 		document.getElementById("word").innerHTML = blankWord.join(' ');
 		console.log(blankWord);
 		chances = 10;
+document.getElementById("chanceImg").src=("images/number_" + chances + ".png");
 		document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = false;});
 		document.getElementById("start-btn").style.visibility="hidden";
 	} else {
@@ -59,10 +61,13 @@ function checkLetter(input){
 	
 	if (foundFlag == 0) {
 		--chances;
+		document.getElementById("chanceImg").src=("images/number_" + chances + ".png");
 		document.getElementById("chance").innerHTML = "Chances: " + chances;
+
 		if (chances == 0) {
 			window.alert("Out of chances. Game Over. The word was: " + targetWord);
 			document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
+	
 			document.getElementById("start-btn").style.visibility="visible";
 			
 		}
@@ -72,6 +77,7 @@ function checkLetter(input){
 		document.getElementById("word").innerHTML = blankWord.join(' ');
 		window.alert("Congratulations! You win!");
 		document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
+
 		document.getElementById("start-btn").style.visibility="visible";
 	}
 }

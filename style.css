@@ -5,12 +5,12 @@
 /*mobile phones*/
 @media only screen and (min-width: 601px) {
   .game-screen {font-size: 24px; color: white;}
-  .hangman-game {width: 50%;}
+  .hangman-game {width: 480px;}
 }
 
 @media only screen and (max-width: 600px) {
   .game-screen {font-size: 12px; color: red;}
-  .hangman-game {width: 480px;}
+  .hangman-game {width: 75%;}
 }
 
 .hangman-game {

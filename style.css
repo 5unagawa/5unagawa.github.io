@@ -141,10 +141,16 @@ input:checked + .slider:before {
 font-size: 32px;	
 }
 
-.word-screen p{
-  margin: auto;
-  font-size: 1.5em;
-  text-align: center;
+.word-screen p {
+    margin: auto;
+    font-size: .8em;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: block;
+    line-height: 1em;
+    max-height: 2em;
 }
 
 #start-btn {

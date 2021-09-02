@@ -120,7 +120,6 @@ function checkLetter(input){
   //alert player, disable buttons and re-enable start button
 	if (blankWord.includes("_") == false) {
 		document.getElementById("word").innerHTML = blankWord.join(' ');
-		window.alert("Congratulations! You win!");
 		document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
 		document.getElementById("start-btn").style.visibility="visible";
 	}

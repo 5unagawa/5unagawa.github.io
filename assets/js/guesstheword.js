@@ -56,9 +56,10 @@ function chooseImage(){
 //initializes the game
 function startGame(){
   //change the start button to "enter" button
+  
+  document.getElementById("start-btn").onclick = "checkGuess(guessArray)";
+  document.getElementById("start-btn").innerHTML = "ENTER";
   document.getElementById("start-btn").id = "enter-btn";
-  document.getElementById("enter-btn").onclick = "checkGuess(guessArray)";
-  document.getElementById("enter-btn").innerHTML = "ENTER";
   //reset the word to be guessed and disabled buttons
   chances = 6;
   document.getElementById('word_'+chances).innerHTML = "";

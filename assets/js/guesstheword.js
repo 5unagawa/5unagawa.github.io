@@ -14,12 +14,6 @@ const keys = document.querySelector('.btn-group');
 keys.addEventListener('click', (event) => {
   //target clicked button
 	const {target} = event;
-	
-	//check that clicked element is a button. 
-	//if not, exit function
-	//if (!target.matches('button')) {
-		//return;
-	//}
   
    switch(target.matches('button')){
   	case target.id == 'enter-btn' :
@@ -33,14 +27,6 @@ keys.addEventListener('click', (event) => {
       	console.log(guessArray);
   		}
   }
-	
-	//run checkLetter fucntion against key pressed
-	//check that the clicked button is not the backspace or new game
-  
-  
-  //addLetter(target.value);
-	//target.style.visibility = "hidden";
-	//console.log(blankWord);
 });
 
 function chooseImage(){
@@ -57,7 +43,7 @@ function chooseImage(){
 function startGame(){
   //change the start button to "enter" button
   
-  document.getElementById("start-btn").onclick = "checkGuess(guessArray)";
+  document.getElementById("start-btn").setAttribute( "onClick", "checkGuess(guessArray)");
   document.getElementById("start-btn").innerHTML = "ENTER";
   document.getElementById("start-btn").id = "enter-btn";
   //reset the word to be guessed and disabled buttons
@@ -79,8 +65,7 @@ function startGame(){
   
   document.getElementById("chance").innerHTML = "Chances: " + chances;
   document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = false;});
-  //hide start button
-  //document.getElementById("start-btn").style.visibility="hidden";
+
 }
 
 
@@ -120,14 +105,17 @@ function checkGuess(g){
             }
     	}    
     
-    
     console.log(guessResults);
 		//update colours
 		styleOutput(guessArray, guessResults);
     }
     guessArray = [];
     --chances;
-    
+
+    if (chances == 0){
+	alert("game over");
+	resetBoard();
+    }
 }
 
 function backspace(){
@@ -154,4 +142,14 @@ function styleOutput(gA, gR){
     }
   myWord.appendChild(elem);
   }
+}
+
+function resetBoard(){
+	document.getElementById("enter-btn").setAttribute( "onClick", "startGame()");
+  	document.getElementById("enter-btn").innerHTML = "NEW GAME";
+  	document.getElementById("enter-btn").id = "start-btn";
+
+	for (let i = 6; i > 0; i--){
+		document.getElementById("word_" + i).innerHTML = " ";
+	}
 }

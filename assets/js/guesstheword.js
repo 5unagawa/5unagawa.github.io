@@ -21,7 +21,8 @@ keys.addEventListener('click', (event) => {
    	case target.id == 'back-btn' :
     	break;
     default:
-    	if(guessArray.length < 5){
+    	console.log("fire");
+        if(guessArray.length < 5){
       	guessArray.push(target.value)
       	document.getElementById('word_'+chances).innerHTML = guessArray.join(' ');
       	console.log(guessArray);

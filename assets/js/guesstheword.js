@@ -11,6 +11,7 @@ document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = t
 //button click event
 const keys = document.querySelector('.btn-group');
 keys.addEventListener('click', (event) => {
+	console.log("button clicked");
   //target clicked button
    const {target} = event;
    switch(target.matches('button')){

@@ -1,7 +1,6 @@
 var targetWord; //word that the player will guess
 var chances;    //counter for number of chances left
 var prevNum;    //holds value of previous question
-var letters = /^[A-Za-z]+$/; //input verification
 
 var fruitArray = ["APPLE", "LEMON", "MANGO", "MELON", "PEACH"];
 let guessArray = [];
@@ -22,7 +21,7 @@ keys.addEventListener('click', (event) => {
         default:
     	    console.log("fire");
             if(guessArray.length < 5){
-      	        guessArray.push(target.value)
+      	        guessArray.push(target.value);
       	        document.getElementById('word_'+chances).innerHTML = guessArray.join(' ');
       	        console.log(guessArray);
             }
@@ -73,7 +72,7 @@ function checkGuess(g){
     let myGuess = g;
     for (let i = 0; i < 5; i++){
         //if direct match
-        console.log("comparing: " + myGuess[i] + " and " + targetWord[i])
+        console.log("comparing: " + myGuess[i] + " and " + targetWord[i]);
       	if (myGuess[i] == targetWord[i]){
         		console.log("direct match found");
             guessResults[i] = 1; // 1 denotes direct match
@@ -111,7 +110,7 @@ function checkGuess(g){
 }
 
 function backspace(){
-    guessArray.pop()
+    guessArray.pop();
     document.getElementById('word_'+chances).innerHTML = guessArray.join(' ');
 }
 

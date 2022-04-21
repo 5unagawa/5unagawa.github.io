@@ -1,5 +1,4 @@
 var targetWord; //word that the player will guess
-var blankWord;  //array to hold blank spaces
 var chances;    //counter for number of chances left
 var prevNum;    //holds value of previous question
 var letters = /^[A-Za-z]+$/; //input verification
@@ -13,20 +12,19 @@ document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = t
 const keys = document.querySelector('.btn-group');
 keys.addEventListener('click', (event) => {
   //target clicked button
-	const {target} = event;
-  
+   const {target} = event;
    switch(target.matches('button')){
   	case target.id == 'enter-btn' :
-    	break;
+    	    break;
    	case target.id == 'back-btn' :
-    	break;
-    default:
-    	console.log("fire");
-        if(guessArray.length < 5){
-      	guessArray.push(target.value)
-      	document.getElementById('word_'+chances).innerHTML = guessArray.join(' ');
-      	console.log(guessArray);
-  		}
+    	    break;
+        default:
+    	    console.log("fire");
+            if(guessArray.length < 5){
+      	        guessArray.push(target.value)
+      	        document.getElementById('word_'+chances).innerHTML = guessArray.join(' ');
+      	        console.log(guessArray);
+            }
   }
 });
 
@@ -53,20 +51,12 @@ function startGame(){
   document.querySelectorAll('.btn-group button').forEach(elem=> {elem.style.visibility = "visible";});
 
   chooseImage();
-	
-  blankWord = new Array(targetWord.length);
-  for (let i=0; i < targetWord.length; i++) {
-      blankWord[i] = "_";
-  }
   console.log("Ready to play");
-  document.getElementById('word_'+chances).innerHTML = blankWord.join(' ');
-  console.log(blankWord);
-		
+//  document.getElementById('word_'+chances).innerHTML = blankWord.join(' ');
+  		
   //reset chance counter and images
-  
   document.getElementById("chance").innerHTML = "Chances: " + chances;
   document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = false;});
-
 }
 
 

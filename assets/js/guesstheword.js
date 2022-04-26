@@ -1,5 +1,3 @@
-import {firstGradeDictionary, secondGradeDictionary, thirdGradeDictionary} from './dictionaries.js';
-
 var targetWord; //word that the player will guess
 var blankWord;  //array to hold blank spaces
 var chances;    //counter for number of chances left

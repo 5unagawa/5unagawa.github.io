@@ -34,3 +34,4 @@ var thirdGradeDictionary = [
     "spent", "spice", "stack", "stage", "stain", "stern", "stood", "super", "thigh", "thumb",
     "tight", "title", "toast", "trash", "trunk", "trust", "whole", "worse", "wrist"
 ]
+export {firstGradeDictionary, secondGradeDictionary, thirdGradeDictionary};

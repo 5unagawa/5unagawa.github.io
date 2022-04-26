@@ -2,23 +2,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
-        <title>untitled</title>
+        <title>Guess The Word</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="assets/css/guess.css">
+        <link rel="stylesheet" type="text/css" href="guess.css">
     </head>
     <body>
     	<div class="hangman-game">
 	    <div class="game-screen">
-	        <p>does the game only work if this is here?</p>
+	        <p id="chance">Chances: 10</p>		
 	    </div>
 	    <div class="word-screen">
-	        <p id="word_6"></p>
-                <p id="word_5"></p>
-                <p id="word_4"></p>
-                <p id="word_3"></p>
-                <p id="word_2"></p>
-                <p id="word_1"></p>
+	        <p id="word_6">_ _ _ _ _</p>
+		<p id="word_5">_ _ _ _ _</p>
+		<p id="word_4">_ _ _ _ _</p>
+		<p id="word_3">_ _ _ _ _</p>
+		<p id="word_2">_ _ _ _ _</p>
+		<p id="word_1">_ _ _ _ _</p>
 	    </div>
 			
 	    <div class="btn-group">
@@ -26,11 +26,10 @@
 		<button id="F" type="button" value="F">F</button><button id="G" type="button" value="G">G</button><button id="H" type="button" value="H">H</button><button id="I" type="button" value="I">I</button><button id="J" type="button" value="J">J</button><button id="K" type="button" value="K">K</button><button id="L" type="button" value="L">L</button><button id="M" type="button" value="M">M</button>
 		<button id="N" type="button" value="N">N</button><button id="O" type="button" value="O">O</button><button id="P" type="button" value="P">P</button><button id="Q" type="button" value="Q">Q</button><button id="R" type="button" value="R">R</button><button id="S" type="button" value="S">S</button><button id="T" type="button" value="T">T</button><button id="U" type="button" value="U">U</button>
 		<button id="V" type="button" value="V">V</button><button id="W" type="button" value="W">W</button><button id="X" type="button" value="X">X</button><button id="Y" type="button" value="Y">Y</button><button id="Z" type="button" value="Z">Z</button>
-        
-                <button id="back-btn" type="button" onclick="backspace()">&#8592;</button>
+        	<button id="back-btn" type="button" onclick="backspace()">&#8592;</button>
 	    </div>
-	    <button id="start-btn" type="button" onclick="startGame()">NEW GAME</button>
+      	    <button id="start-btn" type="button" onclick="startGame()">NEW GAME</button>
         </div>
     </body>
-    <script type="text/javascript" src="assets/js/guesstheword.js"></script>
+    <script type="text/javascript" src="guesstheword.js"></script>
 </html>

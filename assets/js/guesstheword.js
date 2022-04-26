@@ -4,7 +4,7 @@ var chances;    //counter for number of chances left
 var prevNum;    //holds value of previous question
 var letters = /^[A-Za-z]+$/; //input verification
 
-var fruitArray = firstGradeDictionary;
+var fruitArray = ["APPLE", "GRAPE", "LEMON", "MANGO", "MELON", "PEACH"];
 let guessArray = [];
 //disable buttons on page load
 document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});

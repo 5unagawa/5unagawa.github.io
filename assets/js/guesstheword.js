@@ -1,4 +1,4 @@
-import {firstGradeDictionary, secondGradeDictionary, thirdGradeDictionary} from 'dictionaries.js'
+import {firstGradeDictionary, secondGradeDictionary, thirdGradeDictionary} from './dictionaries.js'
 
 var targetWord; //word that the player will guess
 var blankWord;  //array to hold blank spaces

@@ -1,10 +1,12 @@
+import {firstGradeDictionary, secondGradeDictionary, thirdGradeDictionary} from 'dictionaries.js'
+
 var targetWord; //word that the player will guess
 var blankWord;  //array to hold blank spaces
 var chances;    //counter for number of chances left
 var prevNum;    //holds value of previous question
 var letters = /^[A-Za-z]+$/; //input verification
 
-var fruitArray = ["APPLE", "LEMON", "MANGO", "MELON", "PEACH"];
+var fruitArray = firstGradeDictionary;
 let guessArray = [];
 //disable buttons on page load
 document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});

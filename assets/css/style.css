@@ -26,7 +26,7 @@ label {display:inline-block; padding:12px 12px 12px 0;}
 .is-active, .module-collapsible:hover {background-color:#ccc;}
 .is-active:after {content:"-";}
 
-#navbar {background-color:#75704E; position:sticky; top: 0; /*overflow:hidden;*/}
+#navbar {background-color:#75704E; position:sticky; top: 0; overflow:hidden;}
 #navbar a {color:#FFFBFE; display:block; float:left; font-size:18px; padding:14px 10px; text-align:center; text-decoration:none;}
 #navbar a:hover {background-color:##FFFBFE; color:#1E212B;}
 #orderform {background-color:#FFFBFE; border:1px solid #1E212B; border-radius: 8px; padding: 2em;}

@@ -26,7 +26,6 @@
 				<a id="orderlink" href="#order">About</a>
 				<a id="featlink" href="#feat">Portfolio</a>
 				<a id="faqlink" href="#faq">Contact</a>
-				<!--<a href="javascript:void(0)">Store (Coming soon!)</a>-->
 			</div>
 			
 			<div class="m-content" id="message">
@@ -68,10 +67,10 @@
 				</div>
 			</div>
 						
-			<div class="m-content" id="order">
-				<h1 style="color: #131313">Contact</h1>
+			<div class="m-content" id="contact">
+				<h1 style="color: #131313">Get In Touch!</h1>
 				<hr>
-				<form id="orderform">
+				<form id="contactform">
 				<p>Do you have a question? Send me an email :)</p>
 					<div class="m-row">
 						<input type="text" id="fname" name="firstName" placeholder="First name..">
@@ -93,32 +92,31 @@
 						
 					</div>
 					<div class="m-row">
-						<input type="submit" value="Send It!">
+						<input type="submit" value="Send!">
 					</div>							
 				</form>
 			</div>
 		<hr>
 		<div class="m-content">
-				<a href="#top" style="float: right">Top</a>
+		    <a href="#top" style="float: right">Top</a>
 		</div>
 		
 		<footer>
 			Made with love in 2022 <a href="javascript:void(0)">Daniel Sandstrom</a>
 		</footer>
 	</body>
-	
+	<!--
 	<script>
 		var navbar = document.getElementById("navbar");
 		var navhome =document.getElementById("homelink");
 		var navfeat =document.getElementById("featlink");
 		var navorder =document.getElementById("orderlink");
-		var navfaq =document.getElementById("faqlink");
 		var p = navbar.offsetTop;
 		
 		//Distance from top of page to section anchors
 		var linkhome = findPos(document.getElementById("message"));
-		var linkorder = findPos(document.getElementById("order"));
-		var linkfaq = findPos(document.getElementById("faq"));
+		var linkorder = findPos(document.getElementById("feat"));
+		var linkcontact = findPos(document.getElementById("contact"));
 		
 		//Expand FAQ buttons
 		var coll = document.getElementsByClassName("m-collapsible");
@@ -177,9 +175,9 @@
 			} 
 			else {
 				console.log("Unable to calculate");		
-			homelink.classList.remove("is-currentSection");
-			orderlink.classList.remove("is-currentSection");
-			faqlink.classList.remove("is-currentSection");				
+				homelink.classList.remove("is-currentSection");
+				orderlink.classList.remove("is-currentSection");
+				faqlink.classList.remove("is-currentSection");				
 			}
 		}
 		
@@ -192,15 +190,15 @@
 		}
 		
 		function validateForm() {
-			var fName = document.forms["orderform"]["fname"].value;
-			var lName = document.forms["orderform"]["lname"].value;
-			var email = document.forms["orderform"]["emailaddress"].value;
-			var text = document.forms["orderform"]["orderinfo"].value;
+			var fName = document.forms["contactform"]["fname"].value;
+			var lName = document.forms["contactform"]["lname"].value;
+			var email = document.forms["contactform"]["emailaddress"].value;
+			var text = document.forms["contactform"]["subject"].value;
 
 			if (fName == "" || lName == "" || email == "" || text == "")    {
 				alert ("Please ensure all fields are filled in.");
 				return false;
 			}
 		}
-	</script>
+	</script>-->
 </html>

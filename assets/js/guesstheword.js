@@ -7,10 +7,10 @@ var letters = /^[A-Za-z]+$/; //input verification
 var fruitArray = ["APPLE", "GRAPE", "LEMON", "MANGO", "MELON", "PEACH"];
 let guessArray = [];
 //disable buttons on page load
-document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
+document.querySelectorAll('#btn-group button').forEach(elem=> {elem.disabled = true;});
 
 //button click event
-const keys = document.querySelector('.btn-group');
+const keys = document.querySelector('#btn-group');
 keys.addEventListener('click', (event) => {
   //target clicked button
 	const {target} = event;
@@ -49,7 +49,7 @@ function startGame(){
   //reset the word to be guessed and disabled buttons
   chances = 6;
   document.getElementById('word_'+chances).innerHTML = "";
-  document.querySelectorAll('.btn-group button').forEach(elem=> {elem.style.visibility = "visible";});
+  document.querySelectorAll('#btn-group button').forEach(elem=> {elem.style.visibility = "visible";});
 
   chooseImage();
 	
@@ -61,7 +61,7 @@ function startGame(){
   document.getElementById('word_'+chances).innerHTML = blankWord.join(' ');
   console.log(blankWord);
 
-  document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = false;});
+  document.querySelectorAll('#btn-group button').forEach(elem=> {elem.disabled = false;});
 }
 
 
@@ -112,7 +112,7 @@ function checkGuess(g){
 				console.log("got to here");
 				alert("well done");
 				//disable buttons
-				document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
+				document.querySelectorAll('#btn-group button').forEach(elem=> {elem.disabled = true;});
 				resetBoard();
 			}
 		}
@@ -143,11 +143,11 @@ function styleOutput(gA, gR){
     elem.appendChild(text);
     if (res[i] == 1){
         console.log("changing color g");
-        elem.style.color = "green";
+        elem.style.color = "#4D8B31";
     }
     if (res[i] == 2){
         console.log("changing color y");
-        elem.style.color = "yellow";
+        elem.style.color = "#FFC800";
     }
   myWord.appendChild(elem);
   }
@@ -158,13 +158,13 @@ function restyleBoard(gA, gR){
 	for (let i = 0; i < 5; i++){
 		var guessedLetterKey = document.getElementById(gA[i]);
 		if (gR[i] == 0){
-			guessedLetterKey.style.backgroundColor = "red";
+			guessedLetterKey.style.backgroundColor = "#FF312E"; //Tart Orange
 		}
 		if (gR[i] == 1){
-			guessedLetterKey.style.backgroundColor = "green";
+			guessedLetterKey.style.backgroundColor = "#4D8B31"; //Maximum Green
 		}
 		if (gR[i] == 2){
-			guessedLetterKey.style.backgroundColor = "yellow";
+			guessedLetterKey.style.backgroundColor = "#FFC800"; //Mikado Yellow
 		}			
 	}
 }
@@ -173,7 +173,7 @@ function resetBoard(){
 	document.getElementById("enter-btn").setAttribute( "onClick", "startGame()");
   	document.getElementById("enter-btn").innerHTML = "NEW GAME";
   	document.getElementById("enter-btn").id = "start-btn";
-	document.querySelectorAll('.btn-group button').forEach(elem=> {elem.style.backgroundColor = "#248232";});
+	document.querySelectorAll('#btn-group button').forEach(elem=> {elem.style.backgroundColor = "#1E212B";}); //Raisin Black
 
 	for (let i = 6; i > 0; i--){
 		document.getElementById("word_" + i).innerHTML = "_ _ _ _ _";

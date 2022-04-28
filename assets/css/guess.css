@@ -12,13 +12,10 @@ media only screen and (min-width: 601px) {
 }
 
 #word-game {
-  background-color: #818AA3;
-  border: 1px solid #393E41;
-  border-radius 5px;
-  height: auto;
-  left: 50%;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
   position: static;
-  top: 50%;
 }
 
 #btn-group {

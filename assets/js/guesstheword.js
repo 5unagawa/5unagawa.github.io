@@ -121,7 +121,7 @@ function checkGuess(g){
     --chances;
 	
     if (chances == 0){
-		alert("game over");
+		alert("game over, the word was: " + targetWord);
 		resetBoard();
     }
 }

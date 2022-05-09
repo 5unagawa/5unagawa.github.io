@@ -10,7 +10,7 @@
 * {box-sizing: border-box;}
 html, body {background-color:#FFFBFE; font-family:Open Sans; font-size:18px; height:100%; line-height:28px; margin:0; scroll-behavior:smooth;}
 footer {background-color:#75704E; color:#FFFBFE; margin-top:0; padding-bottom:0; text-align:center; width: 100%;}
-h1 {color:#1E212B; font-family:Open Sans; font-weight:bold; line-height:25px; text-align:center;}
+h1 {color:#1E212B; font-weight:bold; line-height:25px; text-align:center;}
 hr {height:1px; color:#1E212B; background-color:#1E212B; border:none;}
 input[type=text], select, textarea {border:1px solid #1E212B; border-radius:8px; box-sizing:border-box; padding:12px; resize:vertical; width:100%;}
 input[type=submit] {background-color:#6CC551; border:none; border-radius:8px; color:#FFFBFE; cursor:pointer; font-size:14px; padding:12px 0px; width: 25%;}

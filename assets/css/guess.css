@@ -9,10 +9,6 @@
 @media only screen and (max-width: 600px) {
   #word-game {width: 75%; height: 90%; align-items: top;}
 }
-/*large screens*/
-media only screen and (min-width: 601px) {
-  #word-game {width: 75%; height: 75%;}
-}
 
 #word-game {
   margin: auto;

@@ -1,15 +1,14 @@
 /*l=layout, m=module, is=state*/
 /*Color codes:
-#FFFBFE - Snow
 #1E212B - Raisin Black
-#75704E - Gold Fusion
-#6CC551 - Mantis
+#F9A620 - Bright Yellow Crayola
 #4281A4 - Celadon Blue
-#93B7BE - Pewter Blue
+#90A583 - Artichoke
+#FFFBFE - Snow
 */
 * {box-sizing: border-box;}
 html, body {background-color:#FFFBFE; font-family:Open Sans; font-size:18px; height:100%; line-height:28px; margin:0; scroll-behavior:smooth;}
-footer {background-color:#75704E; color:#FFFBFE; margin-top:0; padding-bottom:0; text-align:center; width: 100%;}
+footer {background-color:#90A583; color:#FFFBFE; margin-top:0; padding-bottom:0; text-align:center; width: 100%;}
 h1 {color:#1E212B; font-weight:bold; line-height:25px; text-align:center;}
 hr {height:1px; color:#1E212B; background-color:#1E212B; border:none;}
 input[type=text], select, textarea {border:1px solid #1E212B; border-radius:8px; box-sizing:border-box; padding:12px; resize:vertical; width:100%;}
@@ -26,7 +25,7 @@ label {display:inline-block; padding:12px 12px 12px 0;}
 .is-active, .module-collapsible:hover {background-color:#ccc;}
 .is-active:after {content:"-";}
 
-#navbar {background-color:#75704E; position:sticky; top: 0; overflow:hidden;}
+#navbar {background-color:#90A583; position:sticky; top: 0; overflow:hidden;}
 #navbar a {color:#FFFBFE; display:block; float:left; font-size:18px; padding:14px 10px; text-align:center; text-decoration:none;}
 #navbar a:hover {background-color:##FFFBFE; color:#1E212B;}
 #orderform {background-color:#FFFBFE; border:1px solid #1E212B; border-radius: 8px; padding: 2em;}

@@ -53,6 +53,7 @@ function startGame(){
     document.getElementById('word_'+chances).innerHTML = "";
     document.querySelectorAll('#btn-group button').forEach(elem=> {elem.style.visibility = "visible";});
     document.querySelectorAll('#btn-group button').forEach(elem=> {elem.style.backgroundColor = "#1E212B";}); //Raisin Black
+    document.querySelectorAll('#btn-group button').forEach(elem=> {elem.className = "is-unselected";});
     
     chooseWord();
 
@@ -162,12 +163,15 @@ function restyleBoard(gA, gR){
         var guessedLetterKey = document.getElementById(gA[i]);
 	if (gR[i] == 0){
 	    guessedLetterKey.style.backgroundColor = "#FF312E"; //Tart Orange
+	    guessedLetterKey.className = "is-incorrect";
 	}
 	if (gR[i] == 1){
 	    guessedLetterKey.style.backgroundColor = "#4D8B31"; //Maximum Green
+	    guessedLetterKey.className = "is-correct";
 	}
 	if (gR[i] == 2){
 	    guessedLetterKey.style.backgroundColor = "#FFC800"; //Mikado Yellow
+	    guessedLetterKey.className = "is-partial";
 	}			
     }
 }

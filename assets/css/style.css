@@ -6,15 +6,18 @@
 #90A583 - Artichoke
 #FFFBFE - Snow
 */
-* {box-sizing: border-box;}
-html, body {background-color:#FFFBFE; font-family:Open Sans; font-size:18px; height:100%; line-height:28px; margin:0; scroll-behavior:smooth;}
-footer {background-color:#90A583; color:#FFFBFE; margin-top:0; padding-bottom:0; text-align:center; width: 100%;}
-h1 {color:#1E212B; font-weight:bold; line-height:25px; text-align:center;}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+* {box-sizing: border-box; font-family: 'Montserrat', sans-serif;}
+
+html, body {background-color: #FFFBFE; font-size:18px; height:100%; line-height:28px; margin:0; scroll-behavior:smooth;}
+footer {background-color:#4281A4; color:#FFFBFE; margin-top:0; padding-bottom:0; text-align:center; width: 100%;}
+h1 {color:#F9A620; font-weight:bold; line-height:25px; text-align:center;}
+h2 {color:#F9A620; font-style:italic;}
 hr {height:1px; color:#1E212B; background-color:#1E212B; border:none;}
 input[type=text], select, textarea {border:1px solid #1E212B; border-radius:8px; box-sizing:border-box; padding:12px; resize:vertical; width:100%;}
-input[type=submit] {background-color:#6CC551; border:none; border-radius:8px; color:#FFFBFE; cursor:pointer; font-size:14px; padding:12px 0px; width: 25%;}
+input[type=submit] {background-color:#90A583; border:none; border-radius:8px; color:#FFFBFE; cursor:pointer; font-size:14px; padding:12px 0px; width: 25%;}
 label {display:inline-block; padding:12px 12px 12px 0;}
-
+.l-parallaxContainer {background-image: url("../img/programming.jpg"); min-height: 100vh; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;}
 .l-contentContainer {background-color:#FFFBFE; display:block; position:relative; z-index:1;}
 
 .m-content {height:1fr; margin:0 12.5%; max-width:75%; padding:75px 0; text-align:center;}
@@ -25,20 +28,27 @@ label {display:inline-block; padding:12px 12px 12px 0;}
 .is-active, .module-collapsible:hover {background-color:#ccc;}
 .is-active:after {content:"-";}
 
-#navbar {background-color:#90A583; position:sticky; top: 0; overflow:hidden;}
+.l-contact-link { position: relative;justify-content: center; transition: margin-top 0.2s;}
+.l-contact-link:hover{margin-top: 2px;}
+
+#contact-links{
+	align-content: center; 
+	display: inline-grid; 
+	grid-column-gap: 3px; 
+	grid-template-columns: 150px 150px;
+	justify-content: center;
+	width: 100%;
+	padding-bottom: 2px;
+}
+
+#splash{
+	position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+	text-align: center;}
+
+#navbar {background-color:#4281A4; position:sticky; top: 0; overflow:hidden;}
 #navbar a {color:#FFFBFE; display:block; float:left; font-size:18px; padding:14px 10px; text-align:center; text-decoration:none;}
-#navbar a:hover {background-color:##FFFBFE; color:#1E212B;}
+#navbar a:hover {background-color:#F9A620;}
 #orderform {background-color:#FFFBFE; border:1px solid #1E212B; border-radius: 8px; padding: 2em;}
-
-
-
-/*mobile phones*/
-@media only screen and (max-width: 600px) {
-  .game-screen {font-size: 12px; color: white;}
-  .hangman-game {width: 75%; height: 100%;}
-}
-/*large screens*/
-media only screen and (min-width: 601px) {
-  .game-screen {font-size: 32px; color: white;}
-  .hangman-game {width: 480px; height: 100%;}
-}

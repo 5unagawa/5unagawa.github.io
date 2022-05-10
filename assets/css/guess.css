@@ -1,60 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-
-* {
-  font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
-}
+h1 { margin-top: 15px; margin-bottom: 15px; }
 
 /*mobile phones*/
 @media only screen and (max-width: 600px) {
-  #word-game {width: 75%; height: 90%; align-items: top;}
+  #word-game {width: 75%; height: 80%; align-items: top;}
+  #btn-group {align-content: center; display: grid; grid-column-gap: 3px; grid-row-gap: 3px; grid-template-columns: repeat(8, 1fr); justify-content: center; width: 100%;}
 }
 
-#word-game {
-  margin: auto;
-  width: 60%;
-  padding: 0;
-  position: static;
-}
-
-#btn-group {
+#btn-group { 
   align-content: center;
   display: grid;
   grid-column-gap: 3px;
   grid-row-gap: 3px;
   grid-template-columns: repeat(7, 1fr);
   justify-content: center;
+  margin-top: 1px;
   width: 100%;
+}
+#word-game {
+	height: 75vh;
+	margin: auto;
+	padding: 0;
+	position: static;
+	width: 60%;
+}
+
+#word-screen {
+  align-content: center;
+  border-left:  1px solid #393E41;
+  border-right: 1px solid #393E41;
+  border-top: 1px solid #393E41;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+}
+
+#word-screen p{
+  background-color:  #FAFAFA;
+  font-size: 48px;
+  line-height: 50px;
+  margin: auto;
+  text-align: center;
+}
+
+/*Button Styling*/
+.is-unselected:hover {
+  background-color: #323748 !important; /*Charcoal*/
+}
+
+.is-correct:hover {
+  background-color: #65B540 !important; /*Green RYB*/
+}
+
+.is-partial:hover {
+  background-color: #FFD333 !important; /*Cyber Yellow*/
+}
+
+.is-incorrect:hover {
+  background-color: #FF5F5C !important; /*Orange Red Crayola*/
 }
 
 #btn-group button {
   background-color: #1E212B; /*Raisin Black*/
-  border-radius: 3px;
   border: 1px solid #323748; /*Charcoal*/
-  color: #FFFBFE; /*Snow*/
-  font-size: 2rem;
+  border-radius: 3px;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+  color: #FFFBFE; /*Snow*/
   cursor: pointer;
+  font-size: 1.75rem;
   padding:0;
-}
-
-#btn-group button:hover {
-  background-color: #323748; /*Charcoal*/
-}
-
-#word-screen {
-  width: 100%;
-  height: 350px;
-  background-color: #FFFBFE; /*Snow*/
-  justify-content: center;
-  align-content: center;
-  font-size: 32px;	
-}
-
-#word-screen p{
-  margin: auto;
-  font-size: 1.5em;
-  text-align: center;
 }
 
 #start-btn, #enter-btn {
@@ -64,16 +78,17 @@
   border: 1px solid #393E41;
   color: #FFFBFE; /*Snow*/
   font-size: 2rem;
-  padding: 3px 0px 10px 24px;
+  margin-top: 3px;
+  padding: 10px 24px;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
   cursor: pointer;
 }
 
-#start-btn:hover, #enter-btn:hover {
-  background-color: #323748; /*Charcoal*/
+#back-btn {
+	grid-column-start: 6;
+	grid-column-end: 8;
 }
 
-#back-btn{
-  grid-column-start: 6;
-  grid-column-end: 8;
+#start-btn:hover, #enter-btn:hover {
+  background-color: #323748; /*Charcoal*/
 }

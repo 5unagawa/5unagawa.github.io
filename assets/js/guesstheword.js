@@ -2,7 +2,7 @@ var targetWord; //word that the player will guess
 var blankWord;  //array to hold blank spaces
 var chances;    //counter for number of chances left
 var prevNum;    //holds value of previous question
-var wordList = ["APPLE", "GRAPE", "LEMON", "MANGO", "MELON", "PEACH", "BRAZIL", "CHINA", "EGYPT", "GHANA", "INDIA", "ITALY", "JAPAN", "KENYA", "KOREA", "SPAIN"];
+var wordList = ["APPLE", "GRAPE", "LEMON", "MANGO", "MELON", "PEACH", "CHINA", "EGYPT", "GHANA", "INDIA", "ITALY", "JAPAN", "KENYA", "KOREA", "SPAIN"];
 let guessArray = [];
 
 //Disable keyboard buttons on page load.

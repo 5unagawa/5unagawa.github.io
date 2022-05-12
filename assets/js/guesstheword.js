@@ -111,18 +111,18 @@ function checkGuess(g){
 	    document.getElementById("enter-btn").setAttribute( "onClick", "startGame()");
 	    document.getElementById("enter-btn").id = "start-btn";
         }
-    }
 
-    //Clear guessArray and reduce remaining chances:
-    guessArray = [];
-    --chances;	
-    if (chances == 0){
-	alert("Game over, the word was: " + targetWord);
-	//Disable keyboard buttons and turn "enter" button into "new game" button.
-	document.querySelectorAll('#btn-group button').forEach(elem=> {elem.disabled = true;});
-	document.getElementById("enter-btn").innerHTML = "NEW GAME";
-	document.getElementById("enter-btn").setAttribute( "onClick", "startGame()");
-        document.getElementById("enter-btn").id = "start-btn";
+      //Clear guessArray and reduce remaining chances:
+        guessArray = [];
+        --chances;	
+        if (chances == 0 && result != true){
+	    alert("Game over, the word was: " + targetWord);
+	    //Disable keyboard buttons and turn "enter" button into "new game" button.
+	    document.querySelectorAll('#btn-group button').forEach(elem=> {elem.disabled = true;});
+	    document.getElementById("enter-btn").innerHTML = "NEW GAME";
+	    document.getElementById("enter-btn").setAttribute( "onClick", "startGame()");
+            document.getElementById("enter-btn").id = "start-btn";
+        }
     }
 }
 

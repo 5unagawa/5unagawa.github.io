@@ -25,7 +25,7 @@ var tank = createTank(myCanvas);
 var bullet = createBullet(myCanvas, tank);
 
 //word-related variables
-var wordParameters = {width: 100, height: 40, pad: 30: left: 60: top: 0};
+var wordParameters = {width: 100, height: 40, pad: 30, left: 60, top: 0};
 var wordCount = 3;
 var wordList = createWordList(wordCount);
 var targetWord = chooseWords(wordList);

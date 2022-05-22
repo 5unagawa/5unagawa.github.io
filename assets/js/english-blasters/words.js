@@ -11,7 +11,7 @@ var dictionary = [ {jp:"黒", en:"black"}, {jp:"青", en:"blue"},
 ];
 
 function createWordList(wordCount)
-  let wordList = [wordCount];
+  let wordList = [];
   for (let i = 0; i < wordCount; i++){
     wordList[i] = {xPos: 0, yPos: 0, answer: chooseWords(dictionary)}; 
   }

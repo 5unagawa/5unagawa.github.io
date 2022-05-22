@@ -15,7 +15,8 @@ function createWordList(wordCount){
   for (let i = 0; i < wordCount; i++){
     wordList[i] = {xPos: 0, yPos: 0, answer: chooseWords(dictionary)}; 
   }
-return wordList;
+  return wordList;
+}
 
 //Randomly selects a word object from wordArray
 function chooseWords(wordArray){

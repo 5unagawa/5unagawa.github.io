@@ -33,16 +33,4 @@ function createBullet(myCanvas, tankObj){
   return bulletObj;
 }
 
-function drawBullet(myCanvas, bulletObj){
-  let canvas = myCanvas;
-  let ctx = canvas.getContext('2d');
-  let bullet = bulletObj;
-  
-  ctx.beginPath();
-  ctx.arc(bullet.xPos, bullet.yPos, 5, 0, Math.PI*2);
-  ctx.fillStyle = "white";
-  ctx.fill();
-  ctx.closePath();
-}
-
-export { createTank, moveTank, createBullet, drawBullet };
+export { createTank, moveTank, createBullet };

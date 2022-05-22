@@ -26,6 +26,7 @@ var bullet = createBullet(myCanvas, tank);
 
 //word-related variables
 var wordCount = 3;
+var wordOffsetTop = 0;
 var wordList = createWordList(wordCount);
 var targetWord = chooseWords(wordList);
 var targetHit = false;
@@ -99,7 +100,7 @@ function collisionDetection(words, bulletObj, lifeObj){
 function gameLoop(){
  ctx.clearRect(0, 0, canvas.width, canvas.height);
  drawUI(canvas, lives, round, score);
- drawWords(wordList);
+ drawWords(canvas, wordList, wordOffsetTop ,round);
  drawTank(canvas, tank);
  
  	

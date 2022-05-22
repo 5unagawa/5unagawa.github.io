@@ -47,10 +47,10 @@ function moveTank(myCanvas, tankObj, left, right){
 }
 
 function createBullet(myCanvas, tankObj){
-	let canvas = myCanvas;
+  let canvas = myCanvas;
   let tank = tankObj;
   let bulletObj = {spawn: canvas.height - (tank.height + 15), xPos: tank.position, yPos: canvas.height - (tank.height + 15), active: false};
-	return bulletObj;
+  return bulletObj;
 }
 
 function drawBullet(myCanvas, bulletObj){

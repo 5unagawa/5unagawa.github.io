@@ -5,7 +5,7 @@ import { createTank, drawTank, moveTank, createBullet, drawBullet } from './tank
 import { createWordList, chooseWords } from './words.js';
 
 var canvas = create('myDiv','myCanvas', document.body, 480, 320);
-var ctx = canvas.getContext('2d');
+var ctx = canvas.ctx;
 
 var lives = 3;
 var score = 0;

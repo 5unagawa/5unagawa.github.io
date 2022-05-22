@@ -64,3 +64,5 @@ function drawBullet(myCanvas, bulletObj){
   ctx.fill();
   ctx.closePath();
 }
+
+export { createTank, drawTank, moveTank, createBullet, drawBullet };

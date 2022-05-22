@@ -24,7 +24,7 @@ function create(divId, canId, parent, width, height) {
   };
 }
 
-function drawUI(myCanvas, lives, score){
+function drawUI(myCanvas, lives, round, score){
   myCanvas.ctx.font = "16px Arial";
   myCanvas.ctx.fillStyle = "White";
   myCanvas.ctx.fillText("LIVES: " + lives + "   ROUND: " + round + "   SCORE: " + score, 8, 20);

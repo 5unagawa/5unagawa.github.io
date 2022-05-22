@@ -1,16 +1,17 @@
 //main.js 
 
-import { create , drawUI } from './canvas.js';
+import { create , drawUI, drawPickup } from './canvas.js';
 import { createTank, drawTank, moveTank, createBullet, drawBullet } from './tank.js';
-import { createWordList, chooseWords } from './words.js';
+import { dictionary, createWordList, chooseWords } from './words.js';
 
-var myCanvas = create('myDiv','myCanvas', document.body, 480, 320);
+var canvas = create('myDiv','myCanvas', document.body, 480, 320);
+var ctx = canvas.getContext('2d');
+
 var lives = 3;
 var score = 0;
 var round = 1;
 var roundMultiplier = 1;
-var extraLife = spawnExtraLife(myCanvas.width);
-var lifeOnScreen = false;
+var extraLife = createExtraLife(canvas.width);
 
 //keyboard inputs
 var rightPressed = false;
@@ -24,18 +25,10 @@ var tank = createTank(myCanvas);
 var bullet = createBullet(myCanvas, tank);
 
 //word-related variables
-
-var wordArray = [];
-  for (let i = 0; i < wordCount; i++){
-    wordArray[i] = {x: wordX, y: wordY, status:1, answer: chooseWord(objArray)};
-  }
-
-var targetWord = chooseWord(wordArray);
+var wordCount = 3;
+var wordList = createWordList(dictionary);
+var targetWord = chooseWord(wordList);
 var targetHit = false;
-
-
-
-
 
 function keyDownHandler(e){
   if (e.key == "Right" || e.key == "ArrowRight"){
@@ -57,30 +50,12 @@ function keyUpHandler(e){
   }
 }
 
-function spawnExtraLife(canvasWidth){
-	//randomly choose an x co-ord to spawn in the life object
-	var can = myCanvas;
-	var randomNum = Math.floor(Math.random() * (canvasWidth - 44));
-	lifeObj = {xPos: randomNum, yPos: 0, active: false, spawn: true};
-	return lifeObj;
-}
-
-function drawLife(myCanvas, life){
-	var ctx = myCanvas.getContext('2d');
-	ctx.fillStyle = 'white';
-	ctx.beginPath();
-	ctx.moveTo(life.xPos, life.yPos+20);
-	ctx.lineTo(life.xPos+12, life.yPos);
-	ctx.lineTo(life.xPos+32, life.yPos);
-	ctx.lineTo(life.xPos+44, life.yPos+20);
-	ctx.lineTo(life.xPos+32, life.yPos+40);
-	ctx.lineTo(life.xPos+12, life.yPos+40);
-	ctx.closePath();
-	ctx.fill();
-	ctx.fillStyle = "red";
-    ctx.font = "60px Arial";
-	let textWidth = ctx.measureText("+");
-    ctx.fillText("+", life.xPos + 5, life.yPos + 41);
+function createExtraLife(width){
+//randomly choose an x co-ord to spawn in the life object
+  let canvasWidth = width;
+  let randomNum = Math.floor(Math.random(canvasWidth) * (canvasWidth - 44)); //44 is width of health shape
+  let lifeObj = {xPos: randomNum, yPos: 0, active: false, spawn: true};
+  return lifeObj;
 }
 
 function collisionDetection(words, bulletObj, lifeObj){
@@ -122,93 +97,90 @@ function collisionDetection(words, bulletObj, lifeObj){
 }
 
 function gameLoop(){
- var myCan = document.getElementById('myCanvas');
-  var myCtx = myCan.getContext('2d');
-  myCtx.clearRect(0, 0, myCan.width, myCan.height);
-
-  drawUI(myCanvas, lives, round, score);
-  
-  drawTank(myCanvas, tankPosition);
-
-  if (targetHit == true) {
-	  console.log("Round multiplier: " + roundMultiplier);
-	  roundMultiplier += 0.1;
-	  round += 1;
-	  
-	  if (extraLife.active == true){
-	  	extraLife.spawn = false;
-	  }
-	  
-	  if (extraLife.active == false){
-	  	extraLife.spawn = true;
-		extraLife = spawnExtraLife(myCanvas.width);
-		
-	  }
-	  
-	  myCtx.clearRect(0, 0, myCan.width, myCan.height);
-  	  wordArray = [];
-  	  for (let i = 0; i < wordCount; i++){
-        wordArray[i] = {x: 0, y: 0, status:1, answer: chooseWord(objArray)};
-	  
-  	  }
-	  wordOffsetTop = 0;
-	  targetWord = chooseWord(wordArray);
-	  document.getElementById('targetWord').innerHTML = targetWord.answer.en;
-	  targetHit = false;
-  }
-	
-	
-   drawWords();
-   if (round % 10 == 0 && extraLife.spawn == true){
-	extraLife.active = true;
+ ctx.clearRect(0, 0, canvas.width, canvas.height);
+ drawUI(canvas, lives, round, score);
+ drawWords();
+ drawTank(canvas, tank);
+ 
+ 	
+ //Respond to key inputs	
+ if (leftPressed){
+   tank.position = moveTank(canvas, tank, leftPressed, rightPressed);
+ }
+ if (rightPressed){
+   tank.position = moveTank(canvas, tank, leftPressed, rightPressed);
+ }
+ if (spacePressed && bullet.active == false){
+   bullet.xPos = tankPosition +15;
+   bullet.yPos = bullet.spawn;
+   bullet.active=true;
+ }
+ if (bullet.active == true) {
+   bullet.yPos -= 10;
+   drawBullet(bullet);
+   if (bullet.yPos <= 2){
+     bullet.yPos = -1;
+     bullet.active = false;
    }
-	collisionDetection(wordArray, bullet, extraLife);
-  if (leftPressed){
-    tankPosition = moveTank(tankPosition, leftPressed, rightPressed, myCanvas);
-  }
-  if (rightPressed){
-    tankPosition = moveTank(tankPosition, leftPressed, rightPressed, myCanvas);
+ }
+	
+  if (targetHit == true) {
+    console.log("Round multiplier: " + roundMultiplier);
+    roundMultiplier += 0.1;
+    round += 1;
+
+    if (extraLife.active == true){
+      extraLife.spawn = false;
+    }
+    if (extraLife.active == false){
+      extraLife.spawn = true;
+      extraLife = spawnExtraLife(canvas.width);
+    }
+	  
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    wordList = [];
+    for (let i = 0; i < wordCount; i++){
+      wordList[i] = {x: 0, y: 0, answer: chooseWord(objArray), status: 1};
+    }
+    wordOffsetTop = 0;
+    targetWord = chooseWord(wordList);
+    document.getElementById('targetWord').innerHTML = targetWord.answer.en;
+    targetHit = false;
   }
 
-  if (spacePressed && bullet.active == false){
-	bullet.xPos = tankPosition +15;
-	bullet.yPos = bullet.spawn;
-	bullet.active=true;
-	  
-    
-    drawBullet(bullet);
-	  
+  //Extra life	
+  if (round % 10 == 0 && extraLife.spawn == true){
+    extraLife.active = true;
   }
-
-  if (bullet.active == true) {
-    bullet.yPos -= 10;
-    drawBullet(bullet);
-    if (bullet.yPos <= 2){
-      bullet.yPos = -1;
-      bullet.active = false;
+  if (extraLife.active == true) {
+    drawPickup(canvas, extraLife);
+    extraLife.yPos += 0.5;
+    if (extraLife.yPos > canvas.height){
+      extraLife.active = false;
+      extraLife.spawn = false;
+      console.log("life despawned");
     }
   }
+	
+  collisionDetection(wordArray, bullet, extraLife);
+
+
+
+
+
   
-  if (extraLife.active == true) {
+
   
-	drawLife(myCan, extraLife);
-	extraLife.yPos += 0.5;
-	if (extraLife.yPos > myCan.height){
-		extraLife.active = false;
-		extraLife.spawn = false;
-		console.log("life despawned");
-	}
-  }
-  
+  //Move word list down the screen
   wordOffsetTop += (0.1 * roundMultiplier);
 
-  if ( (wordArray[0].y + wordHeight > (myCan.height - (tankHeight+9))) || lives == 0){
+  //Check if words have reached the tank or player has run out of lives	
+  if ( (wordList[0].y + wordHeight > (canvas.height - (tank.height + 9))) || lives == 0){
           window.alert("Game Over.");
   	}
   else {
   	  requestAnimationFrame(gameLoop);
   }
-
 }
 
 document.getElementById('targetWord').innerHTML = targetWord.answer.en;

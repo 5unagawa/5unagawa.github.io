@@ -2,6 +2,7 @@
 
 import { create , drawUI } from './canvas.js';
 import { createTank, drawTank, moveTank, createBullet, drawBullet } from './tank.js';
+import { createWordList, chooseWords } from './words.js';
 
 var myCanvas = create('myDiv','myCanvas', document.body, 480, 320);
 var lives = 3;

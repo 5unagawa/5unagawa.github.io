@@ -6,7 +6,7 @@ function createTank(myCanvas){
   return tankObj;
 }
 
-function drawTank(tankObj, myCanvas){
+function drawTank(myCanvas, tankObj){
   let canvas = myCanvas;
   let ctx = canvas.getContext('2d');
   let tank = tankObj;

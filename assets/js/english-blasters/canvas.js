@@ -30,4 +30,22 @@ function drawUI(myCanvas, lives, round, score){
   myCanvas.ctx.fillText("LIVES: " + lives + "   ROUND: " + round + "   SCORE: " + score, 8, 20);
 }
 
-export { create, drawUI };
+function drawPickup(myCanvas, myPickup){
+  let pickup = myPickup;
+  myCanvas.ctx.fillStyle = 'white';
+  myCanvas.ctx.beginPath();
+  myCanvas.ctx.moveTo(pickUp.xPos, pickUp.yPos+20);
+  myCanvas.ctx.lineTo(pickUp.xPos+12, pickUp.yPos);
+  myCanvas.ctx.lineTo(pickUp.xPos+32, pickUp.yPos);
+  myCanvas.ctx.lineTo(pickUp.xPos+44, pickUp.yPos+20);
+  myCanvas.ctx.lineTo(pickUp.xPos+32, pickUp.yPos+40);
+  myCanvas.ctx.lineTo(pickUp.xPos+12, pickUp.yPos+40);
+  myCanvas.ctx.closePath();
+  myCanvas.ctx.fill();
+  myCanvas.ctx.fillStyle = "red";
+  myCanvas.ctx.font = "60px Arial";
+  let textWidth = myCanvas.ctx.measureText("+");
+  myCanvas.ctx.fillText("+", pickUp.xPos + 5, pickUp.yPos + 41);
+}
+
+export { create, drawUI, drawPickup };

@@ -49,7 +49,6 @@ function drawPickup(myCanvas, myPickup){
 }
 
 function drawWords(myCanvas, wordList, params, roundCount){
-	console.log("drawing words");
   let wordWidth = params.width;
   let wordHeight = params.height;
   let wordPadding = params.pad;
@@ -63,7 +62,8 @@ function drawWords(myCanvas, wordList, params, roundCount){
       let wY = (0.5*(wordHeight + wordPadding)) + wordOffsetTop;
       words[i].xPos = wX;
       words[i].yPos = wY;
-     
+     console.log("got to here");
+	    console.log(words);
       myCanvas.ctx.beginPath();
       myCanvas.ctx.rect(wX, wY, wordWidth, wordHeight);
       if (roundCount % 10 == 0 && words[i].answer.en == targetWord.answer.en){ //Bonus round

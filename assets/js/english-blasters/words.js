@@ -25,4 +25,4 @@ function chooseWords(wordArray){
   return randomWordObj;
 }
 
-export { createWordList, chooseWords };
+export { dictionary, createWordList, chooseWords };

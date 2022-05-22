@@ -168,7 +168,7 @@ function gameLoop(){
   wordParameters.top += (0.1 * roundMultiplier);
 
   //Check if words have reached the tank or player has run out of lives	
-  if ( (wordList[0].y + wordHeight > (canvas.height - (tank.height + 9))) || lives == 0){
+  if ( (wordList[0].y + wordParameters.height > (canvas.height - (tank.height + 9))) || lives == 0){
           window.alert("Game Over.");
   	}
   else {

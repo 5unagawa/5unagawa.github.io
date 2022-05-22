@@ -65,7 +65,7 @@ function collisionDetection(words, bulletObj, lifeObj){
   for (let i = 0; i < words.length; i++){
     let word = words[i];
     if (word.status == 1 && bullet.active == true) {
-      if (bullet.xPos > word.x && bullet.xPos < (word.x + wordWidth) && bullet.yPos > word.y && bullet.yPos < (word.y + wordHeight) ) {
+      if (bullet.xPos > word.xPos && bullet.xPos < (word.xPos + wordParameters.width) && bullet.yPos > word.yPos && bullet.yPos < (word.yPos + wordParameters.height) ) {
         word.status = 0;
         bullet.active = false;
         bullet.yPos = bullet.spawn;

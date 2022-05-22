@@ -98,4 +98,16 @@ function drawTank(myCanvas, tankObj){
   myCanvas.ctx.closePath();
 }
 
-export { create, drawUI, drawPickup, drawWords, drawTank };
+function drawBullet(myCanvas, bulletObj){
+  let canvas = myCanvas;
+  let ctx = canvas.getContext('2d');
+  let bullet = bulletObj;
+  
+  ctx.beginPath();
+  ctx.arc(bullet.xPos, bullet.yPos, 5, 0, Math.PI*2);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  ctx.closePath();
+}
+
+export { create, drawUI, drawPickup, drawWords, drawTank, drawBullet };

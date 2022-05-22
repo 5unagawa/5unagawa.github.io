@@ -48,4 +48,36 @@ function drawPickup(myCanvas, myPickup){
   myCanvas.ctx.fillText("+", pickUp.xPos + 5, pickUp.yPos + 41);
 }
 
-export { create, drawUI, drawPickup };
+function drawWords(myCanvas, wordList, topOffset, roundCount){
+  let wordWidth = 100;
+  let wordHeight = 40;
+  let wordPadding = 30;
+  let wordOffsetLeft = 60;
+  let wordOffsetTop = topOffset;
+  let words = wordList;
+  for (let i = 0; i < words.length; i++){
+    if (words[i].status == 1){
+      let wX = (i*(wordWidth + wordPadding)) + wordOffsetLeft;
+      let wY = (0.5*(wordHeight + wordPadding)) + wordOffsetTop;
+      words[i].xPos = wX;
+      words[i].yPos = wY;
+     
+      myCanvas.ctx.beginPath();
+      myCanvas.ctx.rect(wX, wY, wordWidth, wordHeight);
+      if (roundCount % 10 == 0){ //Bonus round
+        myCanvas.ctx.fillStyle = "purple";
+      }
+      else {
+        myCanvas.ctx.fillStyle = "green";      
+      }
+      myCanvas.ctx.closePath():
+      myCanvas.ctx.fill();
+      myCanvas.ctx.fillStyle = "white";
+      myCanvas.ctx.font = "20px Arial";
+      let textWidth = myCanvas.ctx.measureText(words[i].answer.jp);
+      myCanvas.ctx.fillText(words[i].answer.jp, wX + ((wordWidth - textWidth.width)/2), wY+27);
+    }
+  }
+}
+
+export { create, drawUI, drawPickup, drawWords };

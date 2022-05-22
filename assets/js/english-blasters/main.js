@@ -1,6 +1,6 @@
 //main.js 
 
-import { create , drawUI, drawPickup } from './canvas.js';
+import { create , drawUI, drawPickup, drawWords } from './canvas.js';
 import { createTank, drawTank, moveTank, createBullet, drawBullet } from './tank.js';
 import { createWordList, chooseWords } from './words.js';
 
@@ -99,7 +99,7 @@ function collisionDetection(words, bulletObj, lifeObj){
 function gameLoop(){
  ctx.clearRect(0, 0, canvas.width, canvas.height);
  drawUI(canvas, lives, round, score);
- drawWords();
+ drawWords(wordList);
  drawTank(canvas, tank);
  
  	

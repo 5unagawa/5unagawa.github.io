@@ -34,27 +34,28 @@ function drawPickup(myCanvas, myPickup){
   let pickup = myPickup;
   myCanvas.ctx.fillStyle = 'white';
   myCanvas.ctx.beginPath();
-  myCanvas.ctx.moveTo(pickUp.xPos, pickUp.yPos+20);
-  myCanvas.ctx.lineTo(pickUp.xPos+12, pickUp.yPos);
-  myCanvas.ctx.lineTo(pickUp.xPos+32, pickUp.yPos);
-  myCanvas.ctx.lineTo(pickUp.xPos+44, pickUp.yPos+20);
-  myCanvas.ctx.lineTo(pickUp.xPos+32, pickUp.yPos+40);
-  myCanvas.ctx.lineTo(pickUp.xPos+12, pickUp.yPos+40);
+  myCanvas.ctx.moveTo(pickup.xPos, pickup.yPos+20);
+  myCanvas.ctx.lineTo(pickup.xPos+12, pickup.yPos);
+  myCanvas.ctx.lineTo(pickup.xPos+32, pickup.yPos);
+  myCanvas.ctx.lineTo(pickup.xPos+44, pickup.yPos+20);
+  myCanvas.ctx.lineTo(pickup.xPos+32, pickup.yPos+40);
+  myCanvas.ctx.lineTo(pickup.xPos+12, pickup.yPos+40);
   myCanvas.ctx.closePath();
   myCanvas.ctx.fill();
   myCanvas.ctx.fillStyle = "red";
   myCanvas.ctx.font = "60px Arial";
   let textWidth = myCanvas.ctx.measureText("+");
-  myCanvas.ctx.fillText("+", pickUp.xPos + 5, pickUp.yPos + 41);
+  myCanvas.ctx.fillText("+", pickup.xPos + 5, pickup.yPos + 41);
 }
 
-function drawWords(myCanvas, wordList, topOffset, roundCount){
-  let wordWidth = 100;
-  let wordHeight = 40;
-  let wordPadding = 30;
-  let wordOffsetLeft = 60;
-  let wordOffsetTop = topOffset;
+function drawWords(myCanvas, wordList, params, roundCount){
+  let wordWidth = params.width;
+  let wordHeight = params.height;
+  let wordPadding = params.pad;
+  let wordOffsetLeft = params.left;
+  let wordOffsetTop = params.top;
   let words = wordList;
+  let targetWord = document.getElementById('targetWord');
   for (let i = 0; i < words.length; i++){
     if (words[i].status == 1){
       let wX = (i*(wordWidth + wordPadding)) + wordOffsetLeft;
@@ -64,7 +65,7 @@ function drawWords(myCanvas, wordList, topOffset, roundCount){
      
       myCanvas.ctx.beginPath();
       myCanvas.ctx.rect(wX, wY, wordWidth, wordHeight);
-      if (roundCount % 10 == 0){ //Bonus round
+      if (roundCount % 10 == 0 && words[i].answer.en == targetWord.answer.en){ //Bonus round
         myCanvas.ctx.fillStyle = "purple";
       }
       else {

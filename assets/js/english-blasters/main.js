@@ -27,7 +27,7 @@ var bullet = createBullet(myCanvas, tank);
 //word-related variables
 var wordCount = 3;
 var wordList = createWordList(wordCount);
-var targetWord = chooseWord(wordList);
+var targetWord = chooseWords(wordList);
 var targetHit = false;
 
 function keyDownHandler(e){

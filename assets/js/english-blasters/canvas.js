@@ -70,7 +70,7 @@ function drawWords(myCanvas, wordList, topOffset, roundCount){
       else {
         myCanvas.ctx.fillStyle = "green";      
       }
-      myCanvas.ctx.closePath():
+      myCanvas.ctx.closePath();
       myCanvas.ctx.fill();
       myCanvas.ctx.fillStyle = "white";
       myCanvas.ctx.font = "20px Arial";

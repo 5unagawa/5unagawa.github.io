@@ -25,8 +25,8 @@ var tank = createTank(myCanvas);
 var bullet = createBullet(myCanvas, tank);
 
 //word-related variables
+var wordParamaters = [width: 100, height: 40, pad: 30: left: 60: top: 0];
 var wordCount = 3;
-var wordOffsetTop = 0;
 var wordList = createWordList(wordCount);
 var targetWord = chooseWords(wordList);
 var targetHit = false;
@@ -99,7 +99,7 @@ function collisionDetection(words, bulletObj, lifeObj){
 function gameLoop(){
  ctx.clearRect(0, 0, canvas.width, canvas.height);
  drawUI(canvas, lives, round, score);
- drawWords(canvas, wordList, wordOffsetTop ,round);
+ drawWords(canvas, wordList, wordParameters ,round);
  drawTank(canvas, tank);
  
  	
@@ -163,16 +163,9 @@ function gameLoop(){
   }
 	
   collisionDetection(wordList, bullet, extraLife);
-
-
-
-
-
-  
-
-  
+ 
   //Move word list down the screen
-  wordOffsetTop += (0.1 * roundMultiplier);
+  wordParameters.top += (0.1 * roundMultiplier);
 
   //Check if words have reached the tank or player has run out of lives	
   if ( (wordList[0].y + wordHeight > (canvas.height - (tank.height + 9))) || lives == 0){

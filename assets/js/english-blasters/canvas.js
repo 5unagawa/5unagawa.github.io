@@ -62,8 +62,6 @@ function drawWords(myCanvas, wordList, params, roundCount){
       let wY = (0.5*(wordHeight + wordPadding)) + wordOffsetTop;
       words[i].xPos = wX;
       words[i].yPos = wY;
-     console.log("got to here");
-	    console.log(words);
       myCanvas.ctx.beginPath();
       myCanvas.ctx.rect(wX, wY, wordWidth, wordHeight);
       if (roundCount % 10 == 0 && words[i].answer.en == targetWord.answer.en){ //Bonus round
@@ -101,15 +99,13 @@ function drawTank(myCanvas, tankObj){
 }
 
 function drawBullet(myCanvas, bulletObj){
-  let canvas = myCanvas;
-  let ctx = canvas.getContext('2d');
   let bullet = bulletObj;
   
-  ctx.beginPath();
-  ctx.arc(bullet.xPos, bullet.yPos, 5, 0, Math.PI*2);
-  ctx.fillStyle = "white";
-  ctx.fill();
-  ctx.closePath();
+  myCanvas.ctx.beginPath();
+  myCanvas.ctx.arc(bullet.xPos, bullet.yPos, 5, 0, Math.PI*2);
+  myCanvas.ctx.fillStyle = "white";
+  myCanvas.ctx.fill();
+  myCanvas.ctx.closePath();
 }
 
 export { create, drawUI, drawPickup, drawWords, drawTank, drawBullet };

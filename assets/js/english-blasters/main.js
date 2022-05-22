@@ -140,7 +140,7 @@ function gameLoop(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     wordList = createWordList(wordCount);
     wordParameters.top = 0;
-    targetWord = chooseWord(wordList);
+    targetWord = chooseWords(wordList);
     document.getElementById('targetWord').innerHTML = targetWord.answer.en;
     targetHit = false;
   }

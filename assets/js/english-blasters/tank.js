@@ -2,7 +2,7 @@
 
 function createTank(myCanvas){
   let canvas = myCanvas;
-  let tankObj = {width: 30, height: 10, position: (canvas.width - tankObj.width)/2 } 
+  let tankObj = {width: 30, height: 10, position: (canvas.width - 30)/2 } 
   return tankObj;
 }
 

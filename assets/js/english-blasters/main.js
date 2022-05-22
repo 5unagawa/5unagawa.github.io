@@ -134,7 +134,7 @@ function gameLoop(){
     }
     if (extraLife.active == false){
       extraLife.spawn = true;
-      extraLife = spawnExtraLife(canvas.width);
+      extraLife = createExtraLife(canvas.width);
     }
 	  
     ctx.clearRect(0, 0, canvas.width, canvas.height);

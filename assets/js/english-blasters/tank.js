@@ -6,26 +6,6 @@ function createTank(myCanvas){
   return tankObj;
 }
 
-function drawTank(myCanvas, tankObj){
-  let canvas = myCanvas;
-  let ctx = canvas.getContext('2d');
-  let tank = tankObj;
-  
-  //draw body of tank
-  ctx.beginPath();
-  ctx.rect(tank.position, canvas.height - tank.height, tank.width, tank.height);
-  ctx.fillStyle = "red";
-  ctx.fill();
-  ctx.closePath();
-  
-  //draw turret
-  ctx.beginPath();
-  ctx.rect(tank.position + 10, canvas.height - tank.height - 10, 10, 10);
-  ctx.fillStyle = "red";
-  ctx.fill();
-  ctx.closePath();
-}
-
 function moveTank(myCanvas, tankObj, left, right){
   let canvas = myCanvas;
   let tank = tankObj;
@@ -65,4 +45,4 @@ function drawBullet(myCanvas, bulletObj){
   ctx.closePath();
 }
 
-export { createTank, drawTank, moveTank, createBullet, drawBullet };
+export { createTank, moveTank, createBullet, drawBullet };

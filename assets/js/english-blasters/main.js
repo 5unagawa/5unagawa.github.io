@@ -177,4 +177,5 @@ function gameLoop(){
 }
 
 document.getElementById('targetWord').innerHTML = targetWord.answer.en;
+console.log(wordList);
 gameLoop(myCanvas)

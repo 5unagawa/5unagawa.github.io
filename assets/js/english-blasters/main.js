@@ -2,7 +2,7 @@
 
 import { create , drawUI, drawPickup } from './canvas.js';
 import { createTank, drawTank, moveTank, createBullet, drawBullet } from './tank.js';
-import { dictionary, createWordList, chooseWords } from './words.js';
+import { createWordList, chooseWords } from './words.js';
 
 var canvas = create('myDiv','myCanvas', document.body, 480, 320);
 var ctx = canvas.getContext('2d');
@@ -26,7 +26,7 @@ var bullet = createBullet(myCanvas, tank);
 
 //word-related variables
 var wordCount = 3;
-var wordList = createWordList(dictionary);
+var wordList = createWordList(wordCount);
 var targetWord = chooseWord(wordList);
 var targetHit = false;
 

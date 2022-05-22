@@ -60,41 +60,40 @@ function createExtraLife(width){
 }
 
 function collisionDetection(words, bulletObj, lifeObj){
-	let bullet = bulletObj;
-	let life = lifeObj;
-	for (let i = 0; i < words.length; i++){
-		let word = words[i];
-		if (word.status == 1 && bullet.active == true) {
-			if (bullet.xPos > word.x && bullet.xPos < (word.x + wordWidth) && bullet.yPos > word.y && bullet.yPos < (word.y + wordHeight) ) {
-				word.status = 0;
-				bullet.active = false;
-				bullet.yPos = bullet.spawn;
-			
-			    if (word.answer.en != targetWord.answer.en ){
-          			score -= 10;
-		  			lives -= 1;
-        		}
-        		else {
-					if (round % 5 == 0){
-						score += 50
-					}
-					else {
-						score+=10;	
-					}
-					targetHit = true;
-				}
-			} 	
-		}
-		if (bullet.active == true && life.active == true){
-			if (bullet.xPos > life.xPos && bullet.xPos < (life.xPos + 44) && bullet.yPos > life.yPos && bullet.yPos < (life.yPos + 40)){
-				lives += 1;
-				bullet.active = false;
-				bullet.yPos = bullet.spawn;
-				life.active = false;
-				life.spawn = false;
-			}
-		}
-	}
+  let bullet = bulletObj;
+  let life = lifeObj;
+  for (let i = 0; i < words.length; i++){
+    let word = words[i];
+    if (word.status == 1 && bullet.active == true) {
+      if (bullet.xPos > word.x && bullet.xPos < (word.x + wordWidth) && bullet.yPos > word.y && bullet.yPos < (word.y + wordHeight) ) {
+        word.status = 0;
+        bullet.active = false;
+        bullet.yPos = bullet.spawn;
+        if (word.answer.en != targetWord.answer.en ){
+          score -= 10;
+	  lives -= 1;
+        }
+        else {
+          if (round % 5 == 0){
+	    score += 50
+	  }
+	  else {
+	    score+=10;	
+	  }
+	  targetHit = true;
+        }
+      }  	
+    }
+    if (bullet.active == true && life.active == true){
+      if (bullet.xPos > life.xPos && bullet.xPos < (life.xPos + 44) && bullet.yPos > life.yPos && bullet.yPos < (life.yPos + 40)){
+        lives += 1;
+        bullet.active = false;
+        bullet.yPos = bullet.spawn;
+        life.active = false;
+        life.spawn = false;
+      }
+    }
+  }
 }
 
 function gameLoop(){
@@ -163,7 +162,7 @@ function gameLoop(){
     }
   }
 	
-  collisionDetection(wordArray, bullet, extraLife);
+  collisionDetection(wordList, bullet, extraLife);
 
 
 

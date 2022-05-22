@@ -8,13 +8,22 @@ var lives = 3;
 var score = 0;
 var round = 1;
 var roundMultiplier = 1;
+var extraLife = spawnExtraLife(myCanvas.width);
+var lifeOnScreen = false;
 
-var tankPosition = (myCanvas.width - tankWidth) / 2; //initial position
+//keyboard inputs
 var rightPressed = false;
 var leftPressed = false;
-
 var spacePressed = false;
-var bullet = spawnBullet();
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+
+//Tank-related variables
+var tank = createTank(myCanvas);
+var bullet = createBullet(myCanvas, tank);
+
+//word-related variables
+
 var wordArray = [];
   for (let i = 0; i < wordCount; i++){
     wordArray[i] = {x: wordX, y: wordY, status:1, answer: chooseWord(objArray)};
@@ -23,11 +32,9 @@ var wordArray = [];
 var targetWord = chooseWord(wordArray);
 var targetHit = false;
 
-var extraLife = spawnExtraLife(myCanvas.width);
-var lifeOnScreen = false;
 
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
+
+
 
 function keyDownHandler(e){
   if (e.key == "Right" || e.key == "ArrowRight"){
@@ -118,9 +125,9 @@ function gameLoop(){
   var myCtx = myCan.getContext('2d');
   myCtx.clearRect(0, 0, myCan.width, myCan.height);
 
-  drawUI(myCanvas, lives, score);
+  drawUI(myCanvas, lives, round, score);
   
-  drawTank(tankPosition);
+  drawTank(myCanvas, tankPosition);
 
   if (targetHit == true) {
 	  console.log("Round multiplier: " + roundMultiplier);

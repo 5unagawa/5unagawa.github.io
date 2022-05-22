@@ -49,6 +49,7 @@ function drawPickup(myCanvas, myPickup){
 }
 
 function drawWords(myCanvas, wordList, params, roundCount){
+	console.log("drawing words");
   let wordWidth = params.width;
   let wordHeight = params.height;
   let wordPadding = params.pad;

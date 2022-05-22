@@ -18,7 +18,7 @@ function moveTank(myCanvas, tankObj, left, right){
   }
 	
   if (right == true){
-    if (tank.position + tank.wodth >= canvas.width) {
+    if (tank.position + tank.width >= canvas.width) {
         newPos = canvas.width - tank.width;
     }
     else  newPos += 5;

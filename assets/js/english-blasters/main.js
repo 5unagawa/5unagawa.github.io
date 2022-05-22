@@ -1,7 +1,7 @@
 //main.js 
 
-import { create , drawUI } from '.canvas.js';
-//import { createTank, drawTank, moveTank, createBullet, drawBullet } from '/tank.js';
+import { create , drawUI } from './canvas.js';
+import { createTank, drawTank, moveTank, createBullet, drawBullet } from './tank.js';
 
 var myCanvas = create('myDiv','myCanvas', document.body, 480, 320);
 var lives = 3;

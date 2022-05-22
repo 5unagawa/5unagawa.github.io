@@ -111,7 +111,7 @@ function gameLoop(){
    tank.position = moveTank(canvas, tank, leftPressed, rightPressed);
  }
  if (spacePressed && bullet.active == false){
-   bullet.xPos = tankPosition +15;
+   bullet.xPos = tank.position + 15;
    bullet.yPos = bullet.spawn;
    bullet.active=true;
  }

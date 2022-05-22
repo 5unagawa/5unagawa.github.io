@@ -64,7 +64,7 @@ function drawWords(myCanvas, wordList, params, roundCount){
       words[i].yPos = wY;
       myCanvas.ctx.beginPath();
       myCanvas.ctx.rect(wX, wY, wordWidth, wordHeight);
-      if (roundCount % 10 == 0 && words[i].answer.en == targetWord.answer.en){ //Bonus round
+      if (roundCount % 10 == 0 && words[i].answer.en == targetWord.innerHTML){ //Bonus round
         myCanvas.ctx.fillStyle = "purple";
       }
       else {

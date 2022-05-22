@@ -80,4 +80,22 @@ function drawWords(myCanvas, wordList, topOffset, roundCount){
   }
 }
 
-export { create, drawUI, drawPickup, drawWords };
+function drawTank(myCanvas, tankObj){
+  let tank = tankObj;
+  
+  //draw body of tank
+  myCanvas.ctx.beginPath();
+  myCanvas.ctx.rect(tank.position, myCanvas.height - tank.height, tank.width, tank.height);
+  myCanvas.ctx.fillStyle = "red";
+  myCanvas.ctx.fill();
+  myCanvas.ctx.closePath();
+  
+  //draw turret
+  myCanvas.ctx.beginPath();
+  myCanvas.ctx.rect(tank.position + 10, myCanvas.height - tank.height - 10, 10, 10);
+  myCanvas.ctx.fillStyle = "red";
+  myCanvas.ctx.fill();
+  myCanvas.ctx.closePath();
+}
+
+export { create, drawUI, drawPickup, drawWords, drawTank };

@@ -140,7 +140,7 @@ function gameLoop(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     wordList = [];
     for (let i = 0; i < wordCount; i++){
-      wordList[i] = {x: 0, y: 0, answer: chooseWord(objArray), status: 1};
+      wordList[i] = {x: 0, y: 0, answer: chooseWords(objArray), status: 1};
     }
     wordOffsetTop = 0;
     targetWord = chooseWord(wordList);

@@ -117,7 +117,7 @@ function gameLoop(){
  }
  if (bullet.active == true) {
    bullet.yPos -= 10;
-   drawBullet(bullet);
+   drawBullet(canvas, bullet);
    if (bullet.yPos <= 2){
      bullet.yPos = -1;
      bullet.active = false;

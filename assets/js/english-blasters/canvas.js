@@ -14,6 +14,7 @@ function create(divId, canId, parent, width, height) {
   canvasElem.height = height;
   pElem.id = "targetWord";
   pElem.innerHTML = "PLACEHOLDER";
+  pElem.style.textAlign = "center";
   let ctx = canvasElem.getContext('2d');
 
   return {

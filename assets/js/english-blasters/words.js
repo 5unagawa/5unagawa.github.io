@@ -31,7 +31,7 @@ function shuffle(dict){
 //While the same sets of 3 words can potentially appear, the same word will not appear more than once each round.
 function getNewWords(shuffledDict){
   let wordList = [];
-  for (let i = 0; i < wordCount; i++){
+  for (let i = 0; i < 3; i++){
     wordList[i] = {xPos: 0, yPos: 0, answer: shuffledDict[i], status: 1};
     
     //the word at index[0] is moved to the back of the array

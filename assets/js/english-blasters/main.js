@@ -2,7 +2,7 @@
 
 import { create , drawUI, drawPickup, drawWords, drawTank, drawBullet } from './canvas.js';
 import { createTank, moveTank, createBullet } from './tank.js';
-import { createWordList, chooseWords } from './words.js';
+import { initDictionary, shuffle, getNewWords, getTargetWord } from './words.js';
 
 var canvas = create('myDiv','myCanvas', document.body, 480, 320);
 var ctx = canvas.ctx;
@@ -27,8 +27,9 @@ var bullet = createBullet(myCanvas, tank);
 //word-related variables
 var wordParameters = {width: 100, height: 40, pad: 30, left: 60, top: 0};
 var wordCount = 3;
-var wordList = createWordList(wordCount);
-var targetWord = chooseWords(wordList);
+var dictionary = initDictionary();
+var wordList = getNewWords(dictionary);
+var targetWord = getTargetWord(wordList);
 var targetHit = false;
 
 function keyDownHandler(e){
@@ -138,9 +139,9 @@ function gameLoop(){
     }
 	  
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    wordList = createWordList(wordCount);
+    wordList = getNewWords(dictionary);
     wordParameters.top = 0;
-    targetWord = chooseWords(wordList);
+    targetWord = getTargetWord(wordList);
     document.getElementById('targetWord').innerHTML = targetWord.answer.en;
     targetHit = false;
   }
@@ -174,5 +175,6 @@ function gameLoop(){
 }
 
 document.getElementById('targetWord').innerHTML = targetWord.answer.en;
+
 console.log(wordList);
 gameLoop(myCanvas)

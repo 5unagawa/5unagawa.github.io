@@ -43,7 +43,7 @@ function getNewWords(shuffledDict){
   return wordList;
 }
 
-function chooseTargetWord(wordList){
+function getTargetWord(wordList){
   let randomNum = Math.floor(Math.random() * wordList.length);
   let randomWordObj = wordList[randomNum];
   return randomWordObj;

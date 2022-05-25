@@ -1,5 +1,5 @@
 //canvas.js is responsible for setting up the canvas and drawing the UI.
-
+//
 function create(divId, canId, parent, width, height) {
   let divWrapper = document.createElement('div');
   let canvasElem = document.createElement('canvas');

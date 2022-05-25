@@ -49,4 +49,4 @@ function getTargetWord(wordList){
   return randomWordObj;
 }
 
-export { initDictionary, shuffle, getNewWords, chooseTargetWord };
+export { initDictionary, shuffle, getNewWords, getTargetWord };

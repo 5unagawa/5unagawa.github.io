@@ -109,7 +109,7 @@ function drawBullet(myCanvas, bulletObj){
   
   myCanvas.ctx.beginPath();
   myCanvas.ctx.arc(bullet.xPos, bullet.yPos, 5, 0, Math.PI*2);
-  myCanvas.ctx.fillStyle = "#F8C630";//yellow
+  myCanvas.ctx.fillStyle = "#FFFBFE";//white
   myCanvas.ctx.fill();
   myCanvas.ctx.closePath();
 }

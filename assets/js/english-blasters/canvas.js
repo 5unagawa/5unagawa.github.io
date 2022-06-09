@@ -6,7 +6,7 @@ function create(divId, canId, parent, width, height) {
   let h3Elem = document.createElement('h3');
   parent.appendChild(divWrapper);
   divWrapper.appendChild(canvasElem);
-  divWrapper.appendChild(pElem)
+  divWrapper.appendChild(h3Elem)
 
   divWrapper.id = divId;
   canvasElem.id = canId;

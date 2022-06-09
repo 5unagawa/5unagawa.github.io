@@ -66,14 +66,14 @@ function drawWords(myCanvas, wordList, params, roundCount){
       myCanvas.ctx.beginPath();
       myCanvas.ctx.rect(wX, wY, wordWidth, wordHeight);
       if (roundCount % 10 == 0 && words[i].answer.en == targetWord.innerHTML){ //Bonus round
-        myCanvas.ctx.fillStyle = "#4281A4"; //blue
+        myCanvas.ctx.fillStyle = "#B47EB3"; //purple
 	myCanvas.ctx.closePath();
         myCanvas.ctx.fill();
         myCanvas.ctx.fillStyle = "#1E212B"; //black
         myCanvas.ctx.font = "20px Arial";
       }
       else {
-        myCanvas.ctx.fillStyle = "#90A583"; //green
+        myCanvas.ctx.fillStyle = "#16DB65"; //green
 	myCanvas.ctx.closePath();
         myCanvas.ctx.fill();
         myCanvas.ctx.fillStyle = "#FFFBFE"; //white
@@ -92,14 +92,14 @@ function drawTank(myCanvas, tankObj){
   //draw body of tank
   myCanvas.ctx.beginPath();
   myCanvas.ctx.rect(tank.position, myCanvas.height - tank.height, tank.width, tank.height);
-  myCanvas.ctx.fillStyle = "#4281A4"; //blue
+  myCanvas.ctx.fillStyle = "#5BC0EB"; //blue
   myCanvas.ctx.fill();
   myCanvas.ctx.closePath();
   
   //draw turret
   myCanvas.ctx.beginPath();
   myCanvas.ctx.rect(tank.position + 10, myCanvas.height - tank.height - 10, 10, 10);
-  myCanvas.ctx.fillStyle = "#4281A4"; //blue
+  myCanvas.ctx.fillStyle = "#5BC0EB"; //blue
   myCanvas.ctx.fill();
   myCanvas.ctx.closePath();
 }
@@ -109,7 +109,7 @@ function drawBullet(myCanvas, bulletObj){
   
   myCanvas.ctx.beginPath();
   myCanvas.ctx.arc(bullet.xPos, bullet.yPos, 5, 0, Math.PI*2);
-  myCanvas.ctx.fillStyle = "#F9A620";//yellow
+  myCanvas.ctx.fillStyle = "#F8C630";//yellow
   myCanvas.ctx.fill();
   myCanvas.ctx.closePath();
 }

@@ -3,7 +3,7 @@
 function create(divId, canId, parent, width, height) {
   let divWrapper = document.createElement('div');
   let canvasElem = document.createElement('canvas');
-  let pElem = document.createElement('p');
+  let h3Elem = document.createElement('h3');
   parent.appendChild(divWrapper);
   divWrapper.appendChild(canvasElem);
   divWrapper.appendChild(pElem)
@@ -12,9 +12,9 @@ function create(divId, canId, parent, width, height) {
   canvasElem.id = canId;
   canvasElem.width = width;
   canvasElem.height = height;
-  pElem.id = "targetWord";
-  pElem.innerHTML = "PLACEHOLDER";
-  pElem.style.textAlign = "center";
+  h3Elem.id = "targetWord";
+  h3Elem.innerHTML = "PLACEHOLDER";
+  h3Elem.style.textAlign = "center";
   let ctx = canvasElem.getContext('2d');
 
   return {

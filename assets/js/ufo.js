@@ -70,7 +70,7 @@ function startGame(){
     //reset chance counter and images
     chances = 10;
 	document.getElementById("chance").innerHTML = "Chances: " + chances;
-    document.getElementById("chanceImg").src=("assets/img/ufo/" + chances + ".png");
+    document.getElementById("chanceImg").src=("assets/images/ufo/" + chances + ".png");
 	document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = false;});
     //hide start button
 		document.getElementById("start-btn").style.visibility="hidden";

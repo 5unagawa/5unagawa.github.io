@@ -4,20 +4,10 @@ var chances;    //counter for number of chances left
 var prevNum;    //holds value of previous question
 var letters = /^[A-Za-z]+$/; //input verification
 
-var fruitArray = [ 
-	{val:"apple", image:"image/apple.png"},
-	{val:"banana", image:"image/banana.png"},
-	{val:"cherry", image:"image/cherry.png"},
-	{val:"grapes", image:"image/grapes.png"},
-	{val:"kiwifruit", image:"image/kiwifruit.png"},
-	{val:"lemon", image:"image/lemon.png"},
-	{val:"mango", image:"image/mango.png"},
-	{val:"melon", image:"image/melon.png"},
-	{val:"orange", image:"image/orange.png"},
-	{val:"peach", image:"image/peach.png"},
-	{val:"pineapple", image:"image/pineapple.png"},
-	{val:"strawberry", image:"image/strawberry.png"},
-	{val:"watermelon", image:"image/watermelon.png"}
+var fruitArray = [
+    "affect", "asleep", "bell", "body", "brain", "bright", "cross", "concentrate", "daytime", "energy",
+    "habit", "held", "improve", "lack", "lose", "lost", "minute", "nap", "result", "screen",
+    "sign", "sir", "tonight", "walker" 
 ];
  
 //disable buttons on page load
@@ -79,9 +69,9 @@ function startGame(){
 		
     //reset chance counter and images
     chances = 10;
-		document.getElementById("chance").innerHTML = "Chances: " + chances;
-    //document.getElementById("chanceImg").src=("image/" + chances + ".png");
-		document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = false;});
+	document.getElementById("chance").innerHTML = "Chances: " + chances;
+    document.getElementById("chanceImg").src=("assets/img/ufo/" + chances + ".png");
+	document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = false;});
     //hide start button
 		document.getElementById("start-btn").style.visibility="hidden";
     
@@ -104,7 +94,7 @@ function checkLetter(input){
   //reduce counter and change image
 	if (foundFlag == 0) {
 		--chances;
-		//document.getElementById("chanceImg").src=("image/" + chances + ".png");
+		document.getElementById("chanceImg").src=("assets/img/ufo/" + chances + ".png");
 		document.getElementById("chance").innerHTML = "Chances: " + chances;
 	
   //if player runs out of guesses
@@ -120,6 +110,7 @@ function checkLetter(input){
   //alert player, disable buttons and re-enable start button
 	if (blankWord.includes("_") == false) {
 		document.getElementById("word").innerHTML = blankWord.join(' ');
+		window.alert("Congratulations! You win!");
 		document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
 		document.getElementById("start-btn").style.visibility="visible";
 	}

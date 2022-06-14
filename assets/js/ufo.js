@@ -38,7 +38,7 @@ function chooseImage(){
 	while (randomNum == prevNum) {
 		randomNum = Math.floor(Math.random() * fruitArray.length);
 	}
-	targetWord = fruitArray[randomNum].val;
+	targetWord = fruitArray[randomNum];
 	prevNum = randomNum;
 	document.getElementById("chanceImg").src = (fruitArray[randomNum].image);
 }

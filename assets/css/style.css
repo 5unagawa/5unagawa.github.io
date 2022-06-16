@@ -29,7 +29,7 @@ footer {
   padding-bottom: 0;
   text-align: center;
   width: 100%;
-  position: absolute;
+  position: sticky;
 }
 
 h1 {

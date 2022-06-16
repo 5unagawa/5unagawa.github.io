@@ -12,16 +12,19 @@
     background-color:#3B7080;
     color: #FFFBFE;
 	height: 30px;
+	padding: 0;
 }
 
 .gallery-desc {
     background-color: #FFFBFE;
     color: #1E212B;
     border: 2px solid;
+	padding:0;
 }
 
 .gallery-lang {
     background-color:#3B7080;
     color: #FFFBFE;
     height: 30px;
+padding: 0;
 }

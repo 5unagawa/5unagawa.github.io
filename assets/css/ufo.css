@@ -6,11 +6,11 @@
 h1 { margin-top: 15px; margin-bottom: 15px; }
 
 .ufo-game {
-	height: 75vh;
+	height: 85vh;
 	margin: auto;
 	padding: 0;
 	position: static;
-	width: 60%;
+	width: 75%;
 }
 
 .game-screen {

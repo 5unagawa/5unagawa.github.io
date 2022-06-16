@@ -57,6 +57,12 @@ hr {
 .m-row {margin-left:18%; width: 62.5%;}
 .m-row:after {clear:both; content: ""; display: table;}
 
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 #navbar {
   background-color: #3B7080;
   position: sticky;

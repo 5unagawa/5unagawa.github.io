@@ -98,10 +98,10 @@ var wordList = ["APRIL",
 let guessArray = [];
 
 //Disable keyboard buttons on page load.
-document.querySelectorAll('#btn-group button').forEach(elem=> {elem.disabled = true;});
+document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
 
 //Button click event listener.
-const keys = document.querySelector('#btn-group');
+const keys = document.querySelector('.btn-group');
 keys.addEventListener('click', (event) => {
     //Target the clicked button:
     const {target} = event;
@@ -143,9 +143,9 @@ function startGame(){
         document.getElementById("word_" + i).innerHTML = "_ _ _ _ _";
     }
     document.getElementById('word_'+chances).innerHTML = "";
-    document.querySelectorAll('#btn-group button').forEach(elem=> {elem.style.visibility = "visible";});
-    document.querySelectorAll('#btn-group button').forEach(elem=> {elem.style.backgroundColor = "#1E212B";}); //Raisin Black
-    document.querySelectorAll('#btn-group button').forEach(elem=> {elem.className = "is-unselected";});
+    document.querySelectorAll('.btn-group button').forEach(elem=> {elem.style.visibility = "visible";});
+    document.querySelectorAll('.btn-group button').forEach(elem=> {elem.style.backgroundColor = "#1E212B";}); //Raisin Black
+    document.querySelectorAll('.btn-group button').forEach(elem=> {elem.className = "is-unselected";});
     
     chooseWord();
 
@@ -158,7 +158,7 @@ function startGame(){
     console.log("Ready to play.");
     document.getElementById('word_'+chances).innerHTML = blankWord.join(' ');
 
-    document.querySelectorAll('#btn-group button').forEach(elem=> {elem.disabled = false;});
+    document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = false;});
 }
 
 //Compare the player's guess. Assigns a value to each letter in the guessResults array to denote the letter's position in the target word.
@@ -198,7 +198,7 @@ function checkGuess(g){
 	    
 	if (result == true){
 	    //Disable keyboard buttons and turn "enter" button into "new game" button.
-	    document.querySelectorAll('#btn-group button').forEach(elem=> {elem.disabled = true;});
+	    document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
 	    document.getElementById("enter-btn").innerHTML = "NEW GAME";
 	    document.getElementById("enter-btn").setAttribute( "onClick", "startGame()");
 	    document.getElementById("enter-btn").id = "start-btn";
@@ -210,7 +210,7 @@ function checkGuess(g){
         if (chances == 0 && result != true){
 	    alert("Game over, the word was: " + targetWord);
 	    //Disable keyboard buttons and turn "enter" button into "new game" button.
-	    document.querySelectorAll('#btn-group button').forEach(elem=> {elem.disabled = true;});
+	    document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
 	    document.getElementById("enter-btn").innerHTML = "NEW GAME";
 	    document.getElementById("enter-btn").setAttribute( "onClick", "startGame()");
             document.getElementById("enter-btn").id = "start-btn";

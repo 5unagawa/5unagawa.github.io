@@ -4,19 +4,17 @@
     <meta charset="UTF-8">		
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/index.css"/>
     <link rel="stylesheet" href="assets/css/modal.css"/>
     <link rel="stylesheet" href="assets/css/gallery.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Daniel Sandstrom - Portfolio</title>
   </head>
   <body>
     <div id="top" class="l-parallaxContainer">
-      <h1>Hello!</h1></br>
-      <h2>Sorry for scaring you, I'm Daniel</h2>
-      <div class="mouse">
-        <div class="base">
-          <div class="scroll"></div>
-        </div>
-        <div class="arrow"></div>
+      <div id="splash">
+        <h1>Hello! I'm Daniel.</h1>
+        <p>I can use a computer.</p>
       </div>
     </div>
 
@@ -24,174 +22,73 @@
       <div id="navbar">
         <a id="homelink" href="#top">Top</a>
 	<a id="orderlink" href="#about">About</a>
-	<a id="featlink" href="#portfolio">Portfolio</a>
+	<a id="featlink" href="#projects">Projects</a>
 	<a id="faqlink" href="#contact">Contact</a>
       </div>
 			
       <div class="m-content" id="about">
         <h1>Welcome!</h1>
 	<hr>
-	<p>I'm Daniel Sandstrom, I'm an aspiring web designer/programmer based in Nagasaki, Japan.
-	  Originally from Australia, I moved to Japan in 2017.
-	  In my free time, I'm working on educational web applications for my students to use. It's a fun way for me to keep my skills fresh.
-	  You can check some of the good ones out here.
-	</p>
-	<p>
-	  If you have any questions, feel free to get in touch :)</br> - Dan
-	</p>
+	  <p>
+            I'm Daniel Sandstrom - an aspiring web designer/programmer.</br>
+	    I graduated from Australia's Griffith University in 2016 with a Bachelor of Information Technology and Bachelor of Multimedia.</br>
+	    Wanting to get myself out of my comfort zone, I came to Japan on a working holiday as an Assistant Languge Teacher in a quiet little town called Matsuura..</br>
+	    In my free time, I enjoy making educational web applications for my students to use. It's a fun way for me to keep my skills fresh. You can check some of the good ones out here.
+	  </p>
+	  <p>
+	    If you have any questions, feel free to get in touch :)</br> - Dan
+	  </p>
       </div>
 			
-      <div class="m-content" id="portfolio">
-        <h1>My Portfolio</h1>
+      <div class="m-content" id="projects">
+        <h1>my projects</h1>
 	<hr>
 	<div class="responsive_gallery">
-	  <div class="featured_item">
-	    <img src="assets/images/thumbnail/guess_timg.jpg"/><br><b>Guess The Word</b><br>$5.00
-	  </div>
-	  <div class="featured_item">
-	    <img src="img/thumbnail/hinanjo_timg.jpg"/><br><b>Police Rejection Committee</b><br>$5.00
-	  </div>
-	  <div class="featured_item">
-	    <img src="img/thumbnail/arnold_timg.jpg"/><br><b>Mascot Sticker #1</b><br>$5.00
-	  </div>
-	  <div class="featured_item">
-	    <img src="img/thumbnail/peekachu_timg.jpg"/><br><b>Peek At You</b><br>$5.00
-	  </div>
-	  <div class="featured_item">
-	    <img src="img/thumbnail/logo_timg.jpg"/><br><b>Mascot Sticker #2</b><br>$5.00
-	  </div>			
-	  <div class="featured_item">
-	    <img src="img/thumbnail/arnoldround_timg.jpg"/><br><b>Sunagawa Works</b><br>$5.00
-	  </div>
-	</div>
-      </div>
-						
-      <div class="m-content" id="contact">
-        <h1 style="color: #131313">Get In Touch!</h1>
-	<hr>
-	<form id="contactform">
-	  <p>Do you have a question? Send me an email :)</p>
-	  <div class="m-row">
-	    <input type="text" id="fname" name="firstName" placeholder="First name..">
-	  </div>
-	  <div class="m-row">
-	    <input type="text" id="lname" name="lastName" placeholder="Last name..">
-          </div>					
-	  <div class="m-row">
-	    <input type="text" id="email" name="emailAddress" placeholder="jcitizen@example.com">
-	  </div>
-	  <div class="m-row">
-	    <textarea id="subject" name="subject" placeholder="Inquiry details" style="height:200x"></textarea>
-	  </div>
-	  <div class="m-row">
-	    <input type="submit" value="Send!">
-	  </div>							
-	</form>
-      </div>
-      
+      　　　<a href= "http://5unagawa.github.io/guess-the-word.html" class= "gallery-tile">
+        　　　　<img class="gallery-image" src="assets/images/thumbnail/guess_timg.jpg" alt="Guess The Word">
+　　　　　　　　<p class="gallery-title">Guess The Word</p>
+　　　　　　　　<p class="gallery-desc">
+	  　　　　Shamelessly jumping on the Wordle trend. Originally made with Python, this is Wordle clone uses 
+	  　　　　a dictionary tailored for use by my Japanese junior high school students.
+　　　　　　　　</p>
+　　　　　　　　<p class="gallery-lang">HTML, CSS, JavaScript, Python</p>
+　　　　　　</a>
+      　　　<a href= "http://5unagawa.github.io/word-blasters.html" target= "_blank" class= "gallery-tile">
+　　　　　　　　<img class="gallery-image" src="img/thumbnail/hinanjo_timg.jpg"/ alt="Project">
+　　　　　　　　<p class="gallery-title">Word Blasters</p>
+　　　　　　　　<p class="gallery-desc">
+	  　　　　Have you ever wanted to play Space Invaders and learn at the same time? Neither have I. I'm sorry.</br>
+	  　　　　Hit the correct words to get as many points as you can!
+　　　　　　　　</p>
+　　　　　　　　<p class="gallery-lang">HTML, CSS, JavaScript</p>
+	    </a>
+　　　　　　<a href= "https://5unagawa.github.io/ufo-game.html" target= "_blank" class= "gallery-tile">
+　　　　　　　　<img class="gallery-image" src="img/thumbnail/arnold_timg.jpg"/ alt="Project">
+　　　　　　　　<p class="gallery-title">UFO Game</p>
+　　　　　　　　<p class="gallery-desc">
+	  　　　　A simple JS hangman game.
+　　　　　　　　</p>
+　　　　　　　　<p class="gallery-lang">HTML, CSS, JavaScript</p>
+　　　　　　</a>
+　　　　</div>
+    </div>
+    
+    <div class="m-content" id="contact">
+      <h1>let's work together</h1>
       <hr>
-      <div class="m-content">
-        <a href="#top" style="float: right">Top</a>
+      <div id="contact-links">
+        <span class="l-contact-link" id="github"><i class="fa fa-github" aria-hidden="true"></i> <a href="https://github.com/5unagawa">GitHub</a></span>
+	<span class="l-contact-link" id="email"><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:email@example.com">Send Email</a></span>
       </div>
+    </div>
+      
+    <hr>
+    <div class="m-content">
+      <a href="#top" style="float: right">Top</a>
+    </div>
 
-      <footer>
-        Made with love in 2022 <a href="javascript:void(0)">Daniel Sandstrom</a>
-      </footer>
+    <footer>
+      Made with love in 2022 <a href="javascript:void(0)">Daniel Sandstrom</a>
+    </footer>
   </body>
-	<!--
-	<script>
-		var navbar = document.getElementById("navbar");
-		var navhome =document.getElementById("homelink");
-		var navfeat =document.getElementById("featlink");
-		var navorder =document.getElementById("orderlink");
-		var p = navbar.offsetTop;
-		
-		//Distance from top of page to section anchors
-		var linkhome = findPos(document.getElementById("message"));
-		var linkorder = findPos(document.getElementById("feat"));
-		var linkcontact = findPos(document.getElementById("contact"));
-		
-		//Expand FAQ buttons
-		var coll = document.getElementsByClassName("m-collapsible");
-		var i;
-			
-		//Pin nav bar to top of page, change color of navbar background on scroll
-		window.onscroll = function() {pinNavbar(), navColor()};
-		
-		//Show/hide FAQ answers on click
-		for (i = 0; i < coll.length; i++) {
-			coll[i].addEventListener("click", function() {
-				this.classList.toggle("is-active");
-				var content = this.nextElementSibling;
-	
-				if (content.style.display === "block") {
-					content.style.display = "none";
-				} else {
-					content.style.display = "block";
-				}
-			
-				if (content.style.maxHeight){
-					content.style.maxHeight = null;
-				}
-				else {
-					content.style.maxHeight = content.scrollHeight + "px";
-				}
-			});
-		}	
-		
-		function findPos(navLink) {
-			var pos = navLink.getBoundingClientRect();
-			console.log(pos);
-			return pos.top;
-		}
-		
-		function navColor() {			
-			if (window.pageYOffset <=p) {
-				homelink.classList.remove("is-currentSection");
-			}
-		
-			if ((window.pageYOffset > linkhome) && (window.pageYOffset < linkorder)){
-				homelink.classList.add("is-currentSection");			
-				orderlink.classList.remove("is-currentSection");
-				faqlink.classList.remove("is-currentSection");
-
-			}
-			else if ((window.pageYOffset > linkorder) && (window.pageYOffset < linkfaq)) {
-				orderlink.classList.add("is-currentSection");
-				homelink.classList.remove("is-currentSection");
-				faqlink.classList.remove("is-currentSection");
-			}
-			else if (window.pageYOffset > linkfaq) {
-				faqlink.classList.add("is-currentSection");
-				homelink.classList.remove("is-currentSection");
-				orderlink.classList.remove("is-currentSection");
-			} 
-			else {
-				console.log("Unable to calculate");		
-				homelink.classList.remove("is-currentSection");
-				orderlink.classList.remove("is-currentSection");
-				faqlink.classList.remove("is-currentSection");				
-			}
-		}
-		
-		function pinNavbar() {
-		  if (window.pageYOffset >= p) {
-			navbar.classList.add("is-pinned");
-		  } else {
-			navbar.classList.remove("is-pinned");
-		  }
-		}
-		
-		function validateForm() {
-			var fName = document.forms["contactform"]["fname"].value;
-			var lName = document.forms["contactform"]["lname"].value;
-			var email = document.forms["contactform"]["emailaddress"].value;
-			var text = document.forms["contactform"]["subject"].value;
-
-			if (fName == "" || lName == "" || email == "" || text == "")    {
-				alert ("Please ensure all fields are filled in.");
-				return false;
-			}
-		}
-	</script>-->
 </html>

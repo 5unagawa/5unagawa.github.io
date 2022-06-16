@@ -29,7 +29,7 @@ footer {
   padding-bottom: 0;
   text-align: center;
   width: 100%;
-  position: sticky;
+  height: 30px;
 }
 
 h1 {
@@ -61,6 +61,7 @@ hr {
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  margin-bottom: -30px;
 }
 
 #navbar {

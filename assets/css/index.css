@@ -8,7 +8,7 @@
 */
 
 .l-parallaxContainer {
-  background-image: url("../img/parallax.jpg");
+  background-image: url("../images/parallax.jpg");
   min-height: 100vh;
   background-attachment: fixed;
   background-position: center;

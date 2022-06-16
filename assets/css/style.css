@@ -64,14 +64,14 @@ hr {
   margin-bottom: -30px;
 }
 
-#navbar {
+.navbar {
   background-color: #3B7080;
   position: sticky;
   top: 0;
   overflow: hidden;
 }
 
-#navbar a {
+.navbar a {
   color: #FFFBFE;
   display: block;
   float: left;
@@ -81,6 +81,6 @@ hr {
   text-decoration: none;
 }
 
-#navbar a:hover {
+.navbar a:hover {
   background-color: #DB5461;
 }

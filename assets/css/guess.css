@@ -6,7 +6,7 @@ h1 { margin-top: 15px; margin-bottom: 15px; }
   #btn-group {align-content: center; display: grid; grid-column-gap: 3px; grid-row-gap: 3px; grid-template-columns: repeat(8, 1fr); justify-content: center; width: 100%;}
 }
 
-#btn-group { 
+.btn-group { 
   align-content: center;
   display: grid;
   grid-column-gap: 3px;
@@ -16,7 +16,7 @@ h1 { margin-top: 15px; margin-bottom: 15px; }
   margin-top: 1px;
   width: 100%;
 }
-#word-game {
+.word-game {
 	height: 75vh;
 	margin: auto;
 	padding: 0;
@@ -24,7 +24,7 @@ h1 { margin-top: 15px; margin-bottom: 15px; }
 	width: 60%;
 }
 
-#word-screen {
+.word-screen {
   align-content: center;
   border-left:  1px solid #393E41;
   border-right: 1px solid #393E41;
@@ -34,7 +34,7 @@ h1 { margin-top: 15px; margin-bottom: 15px; }
   width: 100%;
 }
 
-#word-screen p{
+.word-screen p{
   background-color:  #FAFAFA;
   font-size: 48px;
   line-height: 50px;
@@ -59,7 +59,7 @@ h1 { margin-top: 15px; margin-bottom: 15px; }
   background-color: #FF5F5C !important; /*Orange Red Crayola*/
 }
 
-#btn-group button {
+.btn-group button {
   background-color: #1E212B; /*Raisin Black*/
   border: 1px solid #323748; /*Charcoal*/
   border-radius: 3px;
@@ -70,7 +70,7 @@ h1 { margin-top: 15px; margin-bottom: 15px; }
   padding:0;
 }
 
-#start-btn, #enter-btn {
+.start-btn, #enter-btn {
   width: 100%;
   background-color: #1E212B; /*Raisin Black*/
   border-radius: 3px;
@@ -88,6 +88,6 @@ h1 { margin-top: 15px; margin-bottom: 15px; }
 	grid-column-end: 8;
 }
 
-#start-btn:hover, #enter-btn:hover {
+.start-btn:hover, .enter-btn:hover {
   background-color: #323748; /*Charcoal*/
 }

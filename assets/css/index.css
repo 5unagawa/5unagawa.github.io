@@ -65,6 +65,10 @@
   text-align: center;
 }
 
+#splash h1 {
+  color: white;
+}
+
 /* Unused currently
 /*.is-active, .module-collapsible:hover {background-color:#ccc;}
 /*.is-active:after {content:"-";}

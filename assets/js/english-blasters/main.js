@@ -4,7 +4,7 @@ import { create , drawUI, drawPickup, drawWords, drawTank, drawBullet } from './
 import { createTank, moveTank, createBullet } from './tank.js';
 import { initDictionary, shuffle, getNewWords, getTargetWord } from './words.js';
 
-var canvas = create('myDiv','myCanvas', document.getElementById("contentContainer"), 480, 320);
+var canvas = create('myDiv','myCanvas', document.getElementById("container"), 480, 320);
 var ctx = canvas.ctx;
 
 var lives = 3;

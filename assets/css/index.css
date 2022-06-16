@@ -1,0 +1,71 @@
+/*l=layout, m=module, is=state*/
+/*Color codes:
+#1E212B - Raisin Black
+#DB5461 - Indian Red
+#3B7080 - Teal Blue
+#7EA16B - Asparagus
+#FFFBFE - Snow
+*/
+
+.l-parallaxContainer {
+  background-image: url("../img/parallax.jpg");
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+#contact-links{
+  align-content: center; 
+  display: grid; 
+  grid-column-gap: 3px; 
+  grid-template-columns: 150px 150px;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+#contact-links span {
+  transition: margin-top 0.2s;
+  position: absolute;
+}
+
+#contact-links span:hover {
+  margin-top: 2px;
+}
+
+#email {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#github {
+  grid-column: 1;
+  grid-row:1;
+}
+
+#splash {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 75%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Unused currently
+/*.is-active, .module-collapsible:hover {background-color:#ccc;}
+/*.is-active:after {content:"-";}
+/* input[type=text], select, textarea {border:1px solid #1E212B; border-radius:8px; box-sizing:border-box; padding:12px; resize:vertical; width:100%;}
+/* input[type=submit] {background-color:#7EA16B; border:none; border-radius:8px; color:#FFFBFE; cursor:pointer; font-size:14px; padding:12px 0px; width: 25%;}

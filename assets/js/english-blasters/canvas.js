@@ -28,7 +28,7 @@ function create(divId, canId, parent, width, height) {
 function drawUI(myCanvas, lives, round, score){
   myCanvas.ctx.font = "16px Arial";
   myCanvas.ctx.fillStyle = "#FFFBFE";
-  myCanvas.ctx.fillText("LIVES: " + lives + "   ROUND: " + round + "   SCORE: " + score, 8, 20);
+  myCanvas.ctx.fillText("チャンス: " + lives + "   ラウンド: " + round + "   ポイント: " + score, 8, 20);
 }
 
 function drawPickup(myCanvas, myPickup){

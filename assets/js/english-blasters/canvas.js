@@ -73,10 +73,10 @@ function drawWords(myCanvas, wordList, params, roundCount){
         myCanvas.ctx.font = "20px Arial";
       }
       else {
-        myCanvas.ctx.fillStyle = "#000"; //green
+        myCanvas.ctx.fillStyle = "#FFF"; //green
 	myCanvas.ctx.closePath();
         myCanvas.ctx.fill();
-        myCanvas.ctx.fillStyle = "#FFF"; //white
+        myCanvas.ctx.fillStyle = "#000"; //white
         myCanvas.ctx.font = "20px Arial";
       }
      
